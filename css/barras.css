@@ -1,0 +1,460 @@
+@charset "UTF-8";
+
+/**
+ * Gov.co (https://www.gov.co) - Gobierno de Colombia
+ *  - Componente: Barra superior
+ *  - Version: 4.0.0
+ */
+
+/* Fuente iconografica */
+@font-face {
+  font-family: "govco-font";
+  src: url("../assets/icons/fonts/govco-font-icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* WorkSans-Medium */
+@font-face {
+  font-family: 'WorkSans-Medium';
+  src: url('../assets/fonts/Work_Sans/static/WorkSans-Medium.ttf');
+}
+
+/* WorkSans-SemiBold */
+@font-face {
+  font-family: 'WorkSans-SemiBold';
+  src: url('../assets/fonts/Work_Sans/static/WorkSans-SemiBold.ttf');
+}
+
+/* WorkSans-Regular */
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('../assets/fonts/Work_Sans/static/WorkSans-Regular.ttf');
+}
+
+html {
+  font-size: 100%; /* 100% = 16px */
+}
+
+.logo-aut-header-govco {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: -1.5rem;
+}
+
+.logo-aut-header-govco .link-login-header-govco {
+  color: #008E65;
+  font-family: WorkSans-Regular;
+  font-size: 14px;
+  display: block;
+  right: 5.375rem;
+  position: absolute;
+  margin-top: 2rem;
+}
+
+.logo-aut-header-govco .link-login-header-govco:hover {
+  color: #008E65;
+}
+
+.container-logo-header-govco {
+  padding: 3.563rem 5.375rem 0 5.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-logo-header-govco .logo-header-govco {
+  height: 3rem;
+  content: url(https://palmira.gov.co/wp-content/uploads/2024/09/LOGO_PNG_Mesa-de-trabajo-1.png);
+  background-color: #ffffff;
+}
+
+.container-logo-header-govco .container-search-header-govco {
+  max-width: 21.875rem;
+}
+
+@media (max-width: 991px) {
+  .logo-aut-header-govco {
+    display: none;
+  }
+
+  .container-logo-header-govco {
+    padding: 0.781rem 0 0.781rem 1.125rem;
+    border-bottom: 0.188rem solid #004884;
+  }
+
+  .container-logo-header-govco .logo-header-govco {
+    height: 2.188rem;
+  }
+}
+
+/**
+ * Gov.co (https://www.gov.co) - Gobierno de Colombia
+ *  - Componente: Footer
+ *  - Version: 4.0.0
+ */
+
+/*** FUENTE ICONOS ***/
+@font-face {
+ font-family: "govco-fontv2";
+ src: url("govco-font-icons.ttf") format("truetype");
+ font-weight: normal;
+ font-style: normal;
+}
+
+p {
+ line-height: 1.5 !important;
+}
+
+.row > * {
+ padding-left: 0 !important;
+ margin-left: unset !important;
+}
+
+.row {
+ margin-left: 0 !important;
+}
+
+.row.col-xs-12.col-lg-7.govco-texto-sedes,
+.row.col-xs-12.col-lg-7.govco-network {
+ padding-left: 0 !important;
+ width: 100% !important;
+}
+
+body {
+ font-family: var(--bs-font-sans-serif) !important;
+ font-size: 16px !important;
+}
+
+[class^="govco-"]:before,
+[class*=" govco-"]:before {
+ font-family: "govco-fontv2";
+ font-style: normal;
+ font-weight: normal;
+
+ display: inline-block;
+ text-decoration: inherit;
+ width: 1em;
+ margin-right: 0.2em;
+ text-align: center;
+ /* opacity: .8; */
+
+ /* For safety - reset parent styles, that can break glyph codes*/
+ font-variant: normal;
+ text-transform: none;
+
+ /* fix buttons height, for twitter bootstrap */
+ line-height: 1em;
+
+ /* Animation center compensation - margins should be symmetric */
+ /* remove if not needed */
+ margin-left: 0.2em;
+
+ /* you can be more comfortable with increased icons size */
+ /* font-size: 120%; */
+
+ /* Font smoothing. That was taken from TWBS */
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+
+ /* Uncomment for 3D effect */
+ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.govco-twitter-square {
+  background-image: url(../assets/icons/whatsapp-square.svg);
+  min-width: 1.5rem;
+  min-height: 1rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  scale: 2;
+}
+
+.govco-twitter:before {
+ content: "\ee17";
+}
+
+.govco-instagram-square{
+  background-image: url(../assets/icons/instagram-square.svg);
+  min-width: 1.5rem;
+  min-height: 1rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  scale: 2;
+}
+
+.govco-instagram:before {
+ content: "\ed5c";
+}
+
+.govco-facebook-f:before {
+ content: "\ed0e";
+}
+
+.govco-facebook-messenger:before {
+ content: "\ed0f";
+}
+
+.govco-facebook-square {
+  background-image: url(../assets/icons/facebook-square.svg);
+  min-width: 1.5rem;
+  min-height: 1rem;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  scale: 2;
+  
+}
+
+.govco-facebook:before {
+ content: "\ed11";
+}
+
+.govco-phone:before {
+ content: "\ea8a";
+}
+
+.govco-phone-alt:before {
+ content: "\ea85";
+}
+/*** FUENTE ICONOS ***/
+
+/*** MODAL 1 ***/
+.govco-logo-entidad {
+ height: 64px;
+ display: inline-block;
+ content: url(https://palmira.gov.co/wp-content/uploads/2024/09/LOGO_PNG_Mesa-de-trabajo-1.png);
+ background-color: #ffffff;
+}
+
+.govco-co {
+ height: 48px;
+ margin-top: 24px;
+ display: inline-block;
+ content: url(https://cdn.www.gov.co/v4/assets/images/logo-colombia.svg);
+}
+
+.govco-separator {
+ border-left: 1px solid #e5eefb;
+ opacity: 1px;
+ height: 44px;
+ margin-left: 10px;
+ margin-right: 5px;
+ display: inline-block;
+}
+
+.govco-logo {
+ height: 30px;
+ display: inline-block;
+ content: url(https://cdn.www.gov.co/v4/assets/images/logo.svg);
+ vertical-align: super;
+}
+
+.govco-footer-logo {
+ height: 96px;
+ background-color: #3366cc;
+ width: 100%;
+ margin-top: 20px !important;
+}
+
+.govco-data-front {
+ width: calc(100% - 40px);
+ margin-left: 20px !important;
+ -webkit-box-shadow: 50px 30px 0px -30px #e6effd, -50px 30px 0px -30px #e6effd,
+  0px 20px 0px 0px #fdeee6, 50px 50px 0px -30px #e6effd,
+  -50px 50px 0px -30px #e6effd;
+ box-shadow: 50px 30px 0px -30px #008E65, -50px 30px 0px -30px #008E65,
+  0px 20px 0px 0px #008E65, 50px 50px 0px -30px #008E65,
+  -50px 50px 0px -30px #008E65;
+ top: 0;
+ border: 2px solid #008E65;
+ border-radius: 10px;
+ opacity: 1;
+}
+
+.govco-text-header-1 {
+ color: #008E65;
+ text-align: left;
+ font-size: 20px;
+ font-weight: 600;
+}
+
+.govco-text-header-2 {
+ color: #008E65;
+ text-align: left;
+ font-size: 16px;
+ font-weight: bold;
+ margin-bottom: 0 !important;
+}
+
+.govco-text-header-3 {
+ color: #008E65;
+ text-align: left;
+ font-weight: bold;
+ margin-bottom: 0 !important;
+}
+
+.govco-logo-container {
+ margin-left: 80px !important;
+}
+
+.govco-link-modal {
+ color: #008E65;
+ margin-right: 30px !important;
+ text-decoration: underline;
+}
+
+.icon::before {
+ margin: 0 !important;
+ padding: 0 !important;
+ transform: scale(1.5, 1.5);
+ margin-right: 10px !important;
+ margin-left: 5px !important;
+ vertical-align: text-top !important;
+ color: #008E65;
+}
+
+.govco-iconContainer {
+ display: inline-block !important;
+ width: auto !important;
+}
+
+.govco-links-container {
+ margin-bottom: 50px !important;
+ margin-top: 30px !important;
+}
+
+.govco-footer-text {
+ margin-top: 50px !important;
+ margin-left: 80px !important;
+}
+.govco-texto-sedes,
+.govco-network {
+ padding: unset !important;
+}
+
+.govco-network,
+.govco-listado-sedes {
+ margin-top: 30px !important;
+}
+
+.govco-sedes {
+ margin-top: 20px !important;
+}
+
+.govco-logo-div-a {
+ text-align: center !important;
+}
+
+.govco-links-directorio {
+ margin-top: 20px !important;
+}
+
+.govco-link-container {
+ display: inline-block;
+ width: auto !important;
+}
+
+.govco-mostrar {
+ display: none !important;
+}
+
+.govco-nombre-entidad {
+ margin-bottom: 0px !important;
+}
+
+@media (max-width: 991px) {
+ .govco-sedes {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 5px !important;
+ }
+
+ .govco-sede-info {
+  margin-left: 0 !important;
+ }
+
+ .govco-text-header-1 {
+  margin-left: 15px !important;
+ }
+
+ .govco-logo-entidad {
+  height: 65px;
+ }
+
+ .govco-footer-text {
+  margin: 0 !important;
+  margin-top: 50px !important;
+ }
+
+ .govco-nombre-entidad {
+  margin-left: 0px !important;
+  width: 100% !important;
+ }
+
+ .govco-logo-div-a {
+  margin-left: 0 !important;
+ }
+
+ .govco-texto-sedes,
+ .govco-links-directorio,
+ .govco-listado-sedes,
+ .govco-links-container {
+  margin-left: 15px !important;
+  margin-top: 20px !important;
+ }
+
+ .govco-texto-sedes,
+ .govco-network {
+  padding: unset !important;
+ }
+
+ .govco-iconContainer {
+  margin-top: 20px !important;
+  display: block !important;
+  width: 100% !important;
+ }
+
+ .govco-network {
+  margin-left: 15px !important;
+  margin-top: 10px !important;
+ }
+
+ .govco-text-header-3 {
+  margin-top: 20px !important;
+ }
+
+ .govco-link-container {
+  display: block !important;
+  width: 100% !important;
+ }
+
+ .govco-mostrar {
+  display: unset !important;
+ }
+
+ .govco-logo-container {
+  text-align: center !important;
+  margin-left: unset !important;
+ }
+
+ .govco-texto-sedes {
+  padding-right: 20px !important;
+ }
+}
+
+#idioma{
+  border-radius: 0.313rem;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  padding: 0;
+  border: 0.125rem solid #FFFFFF;
+  font-size: 10px;
+  position: absolute;
+  right: 5.375rem;
+  top: 10px;
+  height: 24px;
+  width: 110px;
+}  
