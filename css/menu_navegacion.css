@@ -1,4 +1,3 @@
-
 /* Menu de navegacion */
 .container-navbar-menu-govco {
     background-color: #F2F2F2!important;
@@ -185,7 +184,7 @@
   }
   
   .icon-entidad-menu-govco {
-    content: url(https://qa-govco-and.xyz/cdn-v4/assets/images/Entidad.svg);
+    /* content: url(https://qa-govco-and.xyz/cdn-v4/assets/images/Entidad.svg); */
     height: 2.188rem;
     margin-left: 1.125rem;
     padding: 0;

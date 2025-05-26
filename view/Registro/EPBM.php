@@ -10,12 +10,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"
     crossorigin="anonymous">
-  <link href="css/barras.css" rel="stylesheet" type="text/css">
-  <link href="css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
-  <link href="css/menu_navegacion.css" rel="stylesheet" type="text/css">
-  <link href="css/login.css" rel="stylesheet" type="text/css">
-  <link href="css/boton_arriba.css" rel="stylesheet" type="text/css">
-  <link href="css/entradas-de-texto.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barras.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
+  <link href="../../css/menu_navegacion.css" rel="stylesheet" type="text/css">
+  <link href="../../css/educacion.css" rel="stylesheet" type="text/css">
+  <link href="../../css/boton_arriba.css" rel="stylesheet" type="text/css">
+  <link href="../../css/entradas-de-texto.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="para-mirar">
@@ -115,54 +115,98 @@
   </div>
 
   <!-- Login -->
-  <div class="card-body d-flex justify-content-center" id="para-mirar">
+  <div class="card-body d-flex justify-content-center" id="">
     <div class="inicio-sesion-govco" data-content="natural">
-      <h2>Inicio de sesión</h2>
+      <h2>LICENCIA DE FUNCIONAMIENTO POR PRIMERA VEZ PARA EPBM NO OFICIAL</h2><br>
 
-      <!-- Correo electronico -->
-      <div class="entradas-de-texto-govco">
-        <label for="input-correo-id">Correo Electrónica*</label>
-        <div class="container-input-texto-govco">
-          <input type="mail" id="usu_correo" aria-invalid="false" placeholder="Ej: correo@email.com" typeData="mail" />
-          <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>
-          <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
-        </div>
-      </div>
-
-      <!-- De contraseña -->
-      <div class="entradas-de-texto-govco">
-        <label for="input-contrasenia-id">Contraseña*</label>
-        <div class="container-input-texto-govco">
-          <input type="password" id="input-contrasenia-id" aria-describedby="nota-contrasenia" aria-invalid="false" placeholder="Ejemplo: Campo de texto" minlength="8" typeData="password" />
-          <button class="icon-entradas-de-texto-govco eye-entradas-de-texto-govco none" aria-label="Ocultar contraseña"></button>
-          <button class="icon-entradas-de-texto-govco eye-slash-entradas-de-texto-govco" aria-label="Mostrar contraseña"></button>
-        </div>
-        <span class="info-entradas-de-texto-govco alert-entradas-de-texto-govco" id="nota-contrasenia">Mínimo ocho (8) caracteres, un número, una letra minúscula, una letra mayúscula, un carácter especial.</span>
-      </div>
-
-      <div class="none-login-govco mt-4" id="opcionacceso">
-        <div class="entradas-de-texto-govco">
-          <label id="valor-login" for="textoaccion"></label>
-          <div class="container-input-texto-govco">
-            <input type="text" id="textoaccion" aria-invalid="false" placeholder="" typeData="" aria-required="true" />
-            <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>
-            <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
+      <div class="container-carga-de-archivo-govco">
+        <div class="loader-carga-de-archivo-govco">
+          <div class="all-input-carga-de-archivo-govco">
+            <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple />
+            <label for="inputFile" class="label-carga-de-archivo-govco">concepto de pertinencia favorable del Proyecto Educativo Institucional <br> (PEI)*</label>
+            <label for="inputFile" class="container-input-carga-de-archivo-govco">
+              <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+              <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+            </label>
+            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+          </div>
+          <div class="load-button-carga-de-archivo-govco">
+            <div class="load-carga-de-archivo-govco">
+              <!-- indicador de carga -->
+              <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <!-- end indicador de carga -->
+            </div>
+            <button class="button-loader-carga-de-archivo-govco" disabled>Cargar archivo</button>
           </div>
         </div>
-      </div>
 
-      <div>
-        <button type="button" class="btn-govco fill-btn-govco" name="continuar" style="width: 165px; height: 42px;" disabled>Continuar</button>
-      </div>
-
-      <div class="container-options-login-govco">
-        <div class="mt-3">
-          <a href="">Olvidé mi contraseña</a>
+        <div class="container-detail-carga-de-archivo-govco">
+          <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+          <div class="attached-files-carga-de-archivo-govco"></div>
         </div>
-        <p class="mt-3">¿No tienes cuenta? &nbsp;
-          <a class="mt-3" href="view/registro/index.php">Regístrate aquí</a>
-        </p>
-      </div>
+      </div><br>
+
+<div class="container-carga-de-archivo-govco">
+        <div class="loader-carga-de-archivo-govco">
+          <div class="all-input-carga-de-archivo-govco">
+            <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple />
+            <label for="inputFile" class="label-carga-de-archivo-govco">Certificado de autorización de ocupación de inmueble emitido por la <br> Secretaría de Gobierno, Planeación o Subsecretaria de Inspección y <br> 
+            Control (Este certificado es el que valida el cumplimiento de la <br> licencia o permite el uso, ingreso u ocupación del inmueble conforme<br> al acto de reconocimiento) (Decreto 1075 de 2015, articulo 2.3.2.1.3). *</label>
+            <label for="inputFile" class="container-input-carga-de-archivo-govco">
+              <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+              <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+            </label>
+            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+          </div>
+          <div class="load-button-carga-de-archivo-govco">
+            <div class="load-carga-de-archivo-govco">
+              <!-- indicador de carga -->
+              <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <!-- end indicador de carga -->
+            </div>
+            <button class="button-loader-carga-de-archivo-govco" disabled>Cargar archivo</button>
+          </div>
+        </div>
+
+        <div class="container-detail-carga-de-archivo-govco">
+          <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+          <div class="attached-files-carga-de-archivo-govco"></div>
+        </div>
+      </div><br>
+
+      <div class="container-carga-de-archivo-govco">
+        <div class="loader-carga-de-archivo-govco">
+          <div class="all-input-carga-de-archivo-govco">
+            <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple />
+            <label for="inputFile" class="label-carga-de-archivo-govco">Concepto sanitario favorable o acta de visita.(Secretaria de Salud) <br> (Decreto 1075 de 2015, articulo 2.3.2.1.3)</label>
+            <label for="inputFile" class="container-input-carga-de-archivo-govco">
+              <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+              <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+            </label>
+            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+          </div>
+          <div class="load-button-carga-de-archivo-govco">
+            <div class="load-carga-de-archivo-govco">
+              <!-- indicador de carga -->
+              <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <!-- end indicador de carga -->
+            </div>
+            <button class="button-loader-carga-de-archivo-govco" disabled>Cargar archivo</button>
+          </div>
+        </div>
+
+        <div class="container-detail-carga-de-archivo-govco">
+          <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+          <div class="attached-files-carga-de-archivo-govco"></div>
+        </div>
+      </div><br>
+
     </div>
   </div>
 
@@ -277,22 +321,29 @@
       flag_style: "2d", // estilo de bandera
       flag_size: 24, // tamaño de la bandera
       horizontal_position: "inline", // posición horizontal
-      flags_location: "flags\/", // Ubicación de la bandera
+      flags_location: "../../flags\/", // Ubicación de la bandera
     };
   </script>
 
-  <script src="js/gt.min.js" data-gt-widget-id="43217984"></script>
+  <script src="../../js/gt.min.js" data-gt-widget-id="43217984"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="js/tramites.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/buscador.js"></script>
-  <script src="js/entradas-de-texto.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <!-- pace js -->
-  <script src="assets/js/pace.min.js"></script>
-  <!-- password addon init -->
-  <script src="assets/js/pass-addon.init.js"></script>
+  <!-- <script src="../../js/tramites.js"></script> -->
+  <script src="../../js/archivos.js"></script>
+  <script src="../../js/buscador.js"></script>
+  <script src="../../js/entradas-de-texto.js"></script>
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/pace.min.js"></script>
+  <script src="../../assets/js/metisMenu.min.js"></script>
+  <script src="../../assets/js/simplebar.min.js"></script>
+  <script src="../../assets/js/waves.min.js"></script>
+  <script src="../../assets/js/feather.min.js"></script>
+  <script src="../../assets/js/pass-addon.init.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+  <!-- <script src="../../assets/js/validation.init.js"></script> -->
+
+  <!-- <script type="text/javascript" src="registro.js"></script> -->
 
 </body>
 

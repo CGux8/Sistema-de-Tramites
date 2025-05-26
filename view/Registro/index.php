@@ -10,12 +10,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"
     crossorigin="anonymous">
-  <link href="css/barras.css" rel="stylesheet" type="text/css">
-  <link href="css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
-  <link href="css/menu_navegacion.css" rel="stylesheet" type="text/css">
-  <link href="css/login.css" rel="stylesheet" type="text/css">
-  <link href="css/boton_arriba.css" rel="stylesheet" type="text/css">
-  <link href="css/entradas-de-texto.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barras.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
+  <link href="../../css/menu_navegacion.css" rel="stylesheet" type="text/css">
+  <link href="../../css/login.css" rel="stylesheet" type="text/css">
+  <link href="../../css/boton_arriba.css" rel="stylesheet" type="text/css">
+  <link href="../../css/entradas-de-texto.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="para-mirar">
@@ -115,52 +115,116 @@
   </div>
 
   <!-- Login -->
-  <div class="card-body d-flex justify-content-center" id="para-mirar">
+  <div class="card-body d-flex justify-content-center" id="">
     <div class="inicio-sesion-govco" data-content="natural">
-      <h2>Inicio de sesión</h2>
+      <h2>Registrate</h2>
 
-      <!-- Correo electronico -->
-      <div class="entradas-de-texto-govco">
-        <label for="input-correo-id">Correo Electrónica*</label>
-        <div class="container-input-texto-govco">
-          <input type="mail" id="usu_correo" aria-invalid="false" placeholder="Ej: correo@email.com" typeData="mail" />
-          <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>
-          <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
-        </div>
+      <div class="login-label-govco mt-3">
+        <p><strong>Los campos marcados con <span aria-required="true">*</span> son obligatorios</strong></p>
       </div>
 
-      <!-- De contraseña -->
-      <div class="entradas-de-texto-govco">
-        <label for="input-contrasenia-id">Contraseña*</label>
-        <div class="container-input-texto-govco">
-          <input type="password" id="input-contrasenia-id" aria-describedby="nota-contrasenia" aria-invalid="false" placeholder="Ejemplo: Campo de texto" minlength="8" typeData="password" />
-          <button class="icon-entradas-de-texto-govco eye-entradas-de-texto-govco none" aria-label="Ocultar contraseña"></button>
-          <button class="icon-entradas-de-texto-govco eye-slash-entradas-de-texto-govco" aria-label="Mostrar contraseña"></button>
+      <!-- <form id="mnt_form"method="POST" action="index.html">
+  <div class="entradas-de-texto-govco">
+    <label for="usu_nomape" class="form-label">Nombres y Apellidos*</label>
+    <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" placeholder="Ingresa tus nombres y apellidos" required=""/>
+    !-- <span class="error-message" id="nombres-error">Ingresa tus nombres y apellidos</span> --
+    <div class="validation-error text-danger"></div>
+  </div>
+  
+  <div class="entradas-de-texto-govco">
+    <label for="usu_id">Doc. Identidad*</label>
+    <input type="number" class="input-basico-id" id="usu_id" name="usu_id" placeholder="Ingresa Documento de identidad" required="">
+    <span class="error-message" id="documento-error">Ingresa documento de identidad</span>
+  </div>
+
+  !-- Correo electronico --
+    <div class="entradas-de-texto-govco">
+      <label for="usu_correo">Email*</label>
+       <div class="container-input-texto-govco">
+        <input type="mail" id="usu_correo" name="usu_correo" aria-invalid="false" placeholder="Ej: correo@email.com" typeData="mail"/>
+         <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>      
+         <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
+       </div>
+    </div>
+    
+  !-- De contraseña --
+    <div class="entradas-de-texto-govco">
+      <label for="usu_pass">Contraseña*</label>
+       <div class="container-input-texto-govco">
+        <input type="password" id="usu_pass" name="usu_pass" aria-describedby="nota-contrasenia" aria-invalid="false" placeholder="Ingresa tu contraseña" minlength="8" typeData="password"/>
+         <button class="icon-entradas-de-texto-govco eye-entradas-de-texto-govco none" aria-label="Ocultar contraseña"></button>   
+         <button class="icon-entradas-de-texto-govco eye-slash-entradas-de-texto-govco" aria-label="Mostrar contraseña"></button>
         </div>
         <span class="info-entradas-de-texto-govco alert-entradas-de-texto-govco" id="nota-contrasenia">Mínimo ocho (8) caracteres, un número, una letra minúscula, una letra mayúscula, un carácter especial.</span>
-      </div>
-
-      <div class="none-login-govco mt-4" id="opcionacceso">
-        <div class="entradas-de-texto-govco">
-          <label id="valor-login" for="textoaccion"></label>
-          <div class="container-input-texto-govco">
-            <input type="text" id="textoaccion" aria-invalid="false" placeholder="" typeData="" aria-required="true" />
-            <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>
-            <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
-          </div>
+    </div>
+    !-- <div class="entradas-de-texto-govco">
+      <label for="usu_pass_confir">Confirmar Contraseña*</label>
+       <div class="container-input-texto-govco">
+        <input type="password" id="usu_pass_confir" name="usu_pass_confir" aria-describedby="nota-contrasenia" aria-invalid="false" placeholder="Ingresa tu contraseña" minlength="8" typeData="password"/>
+         <button class="icon-entradas-de-texto-govco eye-entradas-de-texto-govco none" aria-label="Ocultar contraseña"></button>   
+         <button class="icon-entradas-de-texto-govco eye-slash-entradas-de-texto-govco" aria-label="Mostrar contraseña"></button>
         </div>
+    </div> --
+    
+             
+    <div class="none-login-govco mt-4" id="opcionacceso">
+      <div class="entradas-de-texto-govco">
+        <label id="valor-login" for="textoaccion"></label>
+          <div class="container-input-texto-govco">
+            <input type="text" id="textoaccion" aria-invalid="false" placeholder="" typeData="" aria-required="true"/>
+              <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>
+              <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
+          </div>
       </div>
+    </div>
+                  
+    <div>
+    <button class="btn btn-primary w-100" type="submit">Registrarse</button>
+    </div>
+  </form> -->
 
-      <div>
-        <button type="button" class="btn-govco fill-btn-govco" name="continuar" style="width: 165px; height: 42px;" disabled>Continuar</button>
-      </div>
+      <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.php">
+        <div class="mb-3">
+          <label for="usu_nomape" class="form-label">Nombres y Apellidos</label>
+          <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" placeholder="Ingrese Nombres" required="">
+          <div class="validation-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="usu_nit" class="form-label">Documento de Identidad</label>
+          <input type="number" class="form-control" id="usu_nit" name="usu_nit" placeholder="Ingrese Documento" required="">
+          <div class="validation-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="usu_correo" class="form-label">Correo Electronico</label>
+          <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required="">
+          <div class="validation-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="usu_pass" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" required="">
+          <div class="validation-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="usu_pass_confir" class="form-label">Confirmar Contraseña</label>
+          <input type="password" class="form-control" id="usu_pass_confir" name="usu_pass_confir" placeholder="Confirmar Contraseña" required="">
+          <div class="validation-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Registrarse</button>
+        </div>
+      </form>
 
       <div class="container-options-login-govco">
         <div class="mt-3">
-          <a href="">Olvidé mi contraseña</a>
+          <p>Al registrarse acepta los<a href="https://palmira.gov.co/politicas-de-privacidad-y-condiciones-de-uso/"> terminos y condiciones</a></p>
         </div>
-        <p class="mt-3">¿No tienes cuenta? &nbsp;
-          <a class="mt-3" href="view/registro/index.php">Regístrate aquí</a>
+        <p class="mt-3">¿Ya tienes una cuenta? &nbsp;
+          <a class="mt-3" href="../../index.php">Acceder</a>
         </p>
       </div>
     </div>
@@ -277,22 +341,29 @@
       flag_style: "2d", // estilo de bandera
       flag_size: 24, // tamaño de la bandera
       horizontal_position: "inline", // posición horizontal
-      flags_location: "flags\/", // Ubicación de la bandera
+      flags_location: "../../flags\/", // Ubicación de la bandera
     };
   </script>
 
-  <script src="js/gt.min.js" data-gt-widget-id="43217984"></script>
+  <script src="../../js/gt.min.js" data-gt-widget-id="43217984"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="js/tramites.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/buscador.js"></script>
-  <script src="js/entradas-de-texto.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <!-- pace js -->
-  <script src="assets/js/pace.min.js"></script>
-  <!-- password addon init -->
-  <script src="assets/js/pass-addon.init.js"></script>
+  <script src="../../js/tramites.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../js/buscador.js"></script>
+  <script src="../../js/entradas-de-texto.js"></script>
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/js/pace.min.js"></script>
+  <script src="../../assets/js/metisMenu.min.js"></script>
+  <script src="../../assets/js/simplebar.min.js"></script>
+  <script src="../../assets/js/waves.min.js"></script>
+  <script src="../../assets/js/feather.min.js"></script>
+  <script src="../../assets/js/pass-addon.init.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+  <!-- <script src="../../assets/js/validation.init.js"></script> -->
+
+  <script type="text/javascript" src="registro.js"></script>
 
 </body>
 

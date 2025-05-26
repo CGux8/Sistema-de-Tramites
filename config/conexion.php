@@ -16,7 +16,7 @@ ini_set('display_errors', 1);
         protected function conexion(){
          try{
              /* TODO: Intenta establecer la conexion utilizando PDO */
-             $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=tramites","root","");
+             $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=tramitespalmira","root","");
                return $conectar;
           }
           catch(Exception $e){
@@ -33,7 +33,7 @@ ini_set('display_errors', 1);
 
         /* TODO: metodo estatico que devuelve la ruta base del proyecto */
         public static function ruta(){
-             return "http://localhost/Tramites/";
-        }  
+             return "http://localhost/tramites-gov/";
+        }
     }
 ?>  

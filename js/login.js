@@ -1,6 +1,6 @@
-window.addEventListener("load", function(event) {
+/* window.addEventListener("load", function(event) {
     initLogin();
-  });
+  }); */
   
   function methodAssign(e, f, a) {
     for(let i of a) {
@@ -8,16 +8,16 @@ window.addEventListener("load", function(event) {
     }
   }
   
-  function initLogin() {
+ /*  function initLogin() {
     const radio = document.querySelectorAll('.radio-login-govco input');
-    methodAssign("change", getOptionPerson, radio);
+    methodAssign("change", getOptionPerson, radio); */
     
-    const inputNumLogin = document.querySelectorAll('input[typeData="num"]');
-    methodAssign("keyup", activeInputNumberLoguin, inputNumLogin);
+/*     const inputNumLogin = document.querySelectorAll('input[typeData="num"]');
+    methodAssign("keyup", activeInputNumberLoguin, inputNumLogin); */
   
-    initDropDown();
+  /*   initDropDown();
     initInput();
-  
+   */
     // desplegables del login
    /*  const selects = document.querySelectorAll('.desplegable-login-govco');
     methodAssign("click", setInputs, selects);
@@ -579,7 +579,7 @@ window.addEventListener("load", function(event) {
   }
   
     /* -------------------------------- fin entradas de texto --------------------------------------- */
-  }
+  
 
 
   

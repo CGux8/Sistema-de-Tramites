@@ -1,7 +1,7 @@
 <?php
 
     /* TODO: Definicion de la clase Usuario que extiende de la clase Conectar */
-     class Usuario extends conectar {
+     class Usuario extends Conectar {
 
         /* TODO: metodo para registrar un nuevo usuario en la base de datos */
         public function registrar_usuario($usu_nomape, $usu_nit, $usu_correo, $usu_pass){
@@ -13,8 +13,7 @@
             parent::set_names();
 
             /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
-            $sql = "INSERT INTO tm_usuario 
-                    (usu_nomape,usu_nit,usu_correo,usu_pass)
+            $sql ="INSERT INTO tm_usuario (usu_nomape,usu_nit,usu_correo,usu_pass)
                     VALUES
                     (?,?,?,?)";
 
