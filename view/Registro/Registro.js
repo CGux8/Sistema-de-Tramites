@@ -1,3 +1,5 @@
+var timerInterval;
+
 function init() {
   /* TODO: escucha el evento submit del formulario */
   $("#mnt_form").on("submit", function (e) {
@@ -18,7 +20,12 @@ function init() {
 
 function isFormValid() {
   /* TODO: usa validator.js para validar cada campo del formulario */
-  return validateEmail() && validateText("usu_nomape") && validatePassword() && validatePasswordMatch();
+  return (
+    validateEmail() &&
+    validateText("usu_nomape") &&
+    validatePassword() &&
+    validatePasswordMatch()
+  );
 }
 
 function validateEmail() {
@@ -34,13 +41,17 @@ function validateText(fieldId) {
   var isValid = validator.isLength(value, { min: 1 });
   displayErrorMessage("#" + fieldId, isValid, "Este campo es obligatorio");
 
-   return isValid; 
+  return isValid;
 }
 
 function validatePassword() {
   var password = $("#usu_pass").val();
   var isValid = validator.isLength(password, { min: 8 });
-  displayErrorMessage("#usu_pass", isValid,"La contraseña debe tener al menos 8 caracteres");
+  displayErrorMessage(
+    "#usu_pass",
+    isValid,
+    "La contraseña debe tener al menos 8 caracteres"
+  );
 
   return isValid;
 }
@@ -49,7 +60,11 @@ function validatePasswordMatch() {
   var password = $("#usu_pass").val();
   var confirmPassword = $("#usu_pass_confir").val();
   var isValid = validator.equals(password, confirmPassword);
-  displayErrorMessage("#usu_pass_confir", isValid, "Las contraseñas no coinciden");
+  displayErrorMessage(
+    "#usu_pass_confir",
+    isValid,
+    "Las contraseñas no coinciden"
+  );
 
   return isValid;
 }
@@ -79,7 +94,44 @@ function registrar(e) {
     contentType: false,
     processData: false,
     success: function (datos) {
-      console.log("Guardado" + datos);
+      if (datos == 1) {
+        Swal.fire({
+          title: "Usuario Registrado",
+          text: "Por favor inicie sesión. Redirigiendo en 5 segundos.",
+          icon: "success",
+          confirmButtonColor: "#5156be",
+          timer: 5000,
+          timerProgressBar: true,
+          didOpen: function(){
+            Swal.showLoading();
+
+            timerInterval = setInterval(function() {
+              var content = Swal.getHtmlContainer();
+              if (!content) return;
+              var countdownElement = content.querySelector("b");
+              if (countdownElement) {
+                countdownElement.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+              }
+            }, 100);
+          },
+          didClose: function () {
+            clearInterval(timerInterval);
+            window.location.href = "../../index.php";
+          },
+        }).then(function (result) {
+          if (result.dismiss === Swal.DismissReason.timer) {
+            /* console.log("I was closed by the timer"); */
+          }
+        });
+      } else if (datos == 0) {
+        Swal.fire({
+          title: "Error",
+          text: "El usuario ya existe",
+          icon: "error",
+          confirmButtonColor: "#5156be",
+        });
+      }
+      /* console.log(datos); */
     },
   });
 }

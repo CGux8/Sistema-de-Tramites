@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Sweet Alert-->
+  <link href="../../css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
   <link rel="shortcut icon" href="https://tramites.palmira.gov.co/info/palmira_se/web/portal/img/favicon.png" />
   <title>Trámites</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -123,66 +127,7 @@
         <p><strong>Los campos marcados con <span aria-required="true">*</span> son obligatorios</strong></p>
       </div>
 
-      <!-- <form id="mnt_form"method="POST" action="index.html">
-  <div class="entradas-de-texto-govco">
-    <label for="usu_nomape" class="form-label">Nombres y Apellidos*</label>
-    <input type="text" class="form-control" id="usu_nomape" name="usu_nomape" placeholder="Ingresa tus nombres y apellidos" required=""/>
-    !-- <span class="error-message" id="nombres-error">Ingresa tus nombres y apellidos</span> --
-    <div class="validation-error text-danger"></div>
-  </div>
-  
-  <div class="entradas-de-texto-govco">
-    <label for="usu_id">Doc. Identidad*</label>
-    <input type="number" class="input-basico-id" id="usu_id" name="usu_id" placeholder="Ingresa Documento de identidad" required="">
-    <span class="error-message" id="documento-error">Ingresa documento de identidad</span>
-  </div>
-
-  !-- Correo electronico --
-    <div class="entradas-de-texto-govco">
-      <label for="usu_correo">Email*</label>
-       <div class="container-input-texto-govco">
-        <input type="mail" id="usu_correo" name="usu_correo" aria-invalid="false" placeholder="Ej: correo@email.com" typeData="mail"/>
-         <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>      
-         <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
-       </div>
-    </div>
-    
-  !-- De contraseña --
-    <div class="entradas-de-texto-govco">
-      <label for="usu_pass">Contraseña*</label>
-       <div class="container-input-texto-govco">
-        <input type="password" id="usu_pass" name="usu_pass" aria-describedby="nota-contrasenia" aria-invalid="false" placeholder="Ingresa tu contraseña" minlength="8" typeData="password"/>
-         <button class="icon-entradas-de-texto-govco eye-entradas-de-texto-govco none" aria-label="Ocultar contraseña"></button>   
-         <button class="icon-entradas-de-texto-govco eye-slash-entradas-de-texto-govco" aria-label="Mostrar contraseña"></button>
-        </div>
-        <span class="info-entradas-de-texto-govco alert-entradas-de-texto-govco" id="nota-contrasenia">Mínimo ocho (8) caracteres, un número, una letra minúscula, una letra mayúscula, un carácter especial.</span>
-    </div>
-    !-- <div class="entradas-de-texto-govco">
-      <label for="usu_pass_confir">Confirmar Contraseña*</label>
-       <div class="container-input-texto-govco">
-        <input type="password" id="usu_pass_confir" name="usu_pass_confir" aria-describedby="nota-contrasenia" aria-invalid="false" placeholder="Ingresa tu contraseña" minlength="8" typeData="password"/>
-         <button class="icon-entradas-de-texto-govco eye-entradas-de-texto-govco none" aria-label="Ocultar contraseña"></button>   
-         <button class="icon-entradas-de-texto-govco eye-slash-entradas-de-texto-govco" aria-label="Mostrar contraseña"></button>
-        </div>
-    </div> --
-    
-             
-    <div class="none-login-govco mt-4" id="opcionacceso">
-      <div class="entradas-de-texto-govco">
-        <label id="valor-login" for="textoaccion"></label>
-          <div class="container-input-texto-govco">
-            <input type="text" id="textoaccion" aria-invalid="false" placeholder="" typeData="" aria-required="true"/>
-              <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success" aria-hidden="true"></div>
-              <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error" aria-hidden="true"></div>
-          </div>
-      </div>
-    </div>
-                  
-    <div>
-    <button class="btn btn-primary w-100" type="submit">Registrarse</button>
-    </div>
-  </form> -->
-
+      
       <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.php">
         <div class="mb-3">
           <label for="usu_nomape" class="form-label">Nombres y Apellidos</label>
@@ -353,12 +298,17 @@
   <script src="../../js/entradas-de-texto.js"></script>
   <script src="../../assets/js/jquery.min.js"></script>
   <script src="../../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../../assets/js/pace.min.js"></script>
+
   <script src="../../assets/js/metisMenu.min.js"></script>
   <script src="../../assets/js/simplebar.min.js"></script>
   <script src="../../assets/js/waves.min.js"></script>
   <script src="../../assets/js/feather.min.js"></script>
   <script src="../../assets/js/pass-addon.init.js"></script>
+
+  <script src="../../assets/js/pace.min.js"></script>
+
+  <!-- Sweet Alerts js -->
+  <script src="../../assets/js/sweetalert2.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
   <!-- <script src="../../assets/js/validation.init.js"></script> -->
