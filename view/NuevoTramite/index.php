@@ -25,7 +25,7 @@ if (isset($_SESSION["usu_id"])) {
               <div class="col-12">
                 <div
                   class="page-title-box d-sm-flex align-items-center justify-content-between">
-                  <h1 class="mb-sm-0 font-size-18">Nuevo Tramite</h1>
+                  <h1 class="mb-sm-0 font-size-18">Gestionar Tramite</h1>
 
                   <div class="page-title-right">
                     <ol class="breadcrumb m-0">
@@ -48,7 +48,7 @@ if (isset($_SESSION["usu_id"])) {
 
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-3">
                           <div class="mb-3">
                             <label for="choices-single-default" class="form-label font-size-15 text-muted">Dependencia</label>
                             <h6>SECRETARIA DE SALUD</h6>
@@ -60,9 +60,51 @@ if (isset($_SESSION["usu_id"])) {
                             </select> -->
                           </div>
                         </div>
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="choices-single-default" class="form-label font-size-15 text-muted">Tramite</label>
+                            <h6>LICENCIA DE INHUMACIÓN DE CADAVERES</h6>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="choices-single-default" class="form-label font-size-15 text-muted">Descripción</label>
+                            <h6>Autorización para enterrar o depositar cadáveres, restos óseos y partes humanas en los cementerios.</h6>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label for="example-text-input" class="form-label">Nombres</label>
+                              <input class="form-control" type="text" value="Digite su nombre" id="example-text-input">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Primer Apellido</label>
+                              <input class="form-control" type="text" value="Digite su nombre" id="example-text-input">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Segundo Apellido</label>
+                              <input class="form-control" type="text" value="Digite su nombre" id="example-text-input">
+                            </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

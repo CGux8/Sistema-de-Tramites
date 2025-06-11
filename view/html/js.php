@@ -8,3 +8,10 @@
 <script src="../../assets/js/choices.min.js"></script>
 <script src="../../assets/js/app.js"></script>
 <!-- <script src="../../assets/js/form-advanced.init.js"></script> -->
+
+
+
+<div class="mb-3">
+    <label for="example-text-input" class="form-label">Text</label>
+    <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+</div>

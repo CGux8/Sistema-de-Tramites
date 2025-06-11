@@ -16,7 +16,7 @@
               <li>
                 <a href="../NuevoTramite/">
                   <i data-feather="grid"></i>
-                  <span data-key="t-apps">Nuevo Tramite</span>
+                  <span data-key="t-apps">Gestionar Tramite</span>
                 </a>
               </li>
 
