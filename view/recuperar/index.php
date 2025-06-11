@@ -1,11 +1,3 @@
-<?php
-require_once("config/conexion.php");
-if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
-  require_once("models/Usuario.php");
-  $usuario = new Usuario();
-  $usuario->login();
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,23 +5,21 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Sweet Alert-->
+  <link href="../../css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
   <link rel="shortcut icon" href="https://tramites.palmira.gov.co/info/palmira_se/web/portal/img/favicon.png" />
   <title>Trámites</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"
     crossorigin="anonymous">
-  <!-- Bootstrap Css -->
-  <link href="assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
-  <!-- Icons Css -->
-    <link href="assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
-     <!-- App Css-->
-    <link href="assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
-  <link href="css/barras.css" rel="stylesheet" type="text/css">
-  <link href="css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
-  <link href="css/menu_navegacion.css" rel="stylesheet" type="text/css">
-  <link href="css/login.css" rel="stylesheet" type="text/css">
-  <link href="css/boton_arriba.css" rel="stylesheet" type="text/css">
-  <link href="css/entradas-de-texto.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barras.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
+  <link href="../../css/menu_navegacion.css" rel="stylesheet" type="text/css">
+  <link href="../../css/login.css" rel="stylesheet" type="text/css">
+  <link href="../../css/boton_arriba.css" rel="stylesheet" type="text/css">
+  <link href="../../css/entradas-de-texto.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="para-mirar">
@@ -128,95 +118,38 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <!-- Cabecera -->
   </div>
 
-  <!-- Login -->
-  <div class="card-body d-flex justify-content-center" id="para-mirar">
-    <div class="inicio-sesion-govco" data-content="natural">
-      <h2>Inicio de sesión</h2>
-
-      <!-- Correo electronico -->
-      <form class="custom-form mt-4 pt-2" action="" method="post">
-
-        <?php
-        if (isset($_GET["m"])) {
-          switch ($_GET["m"]) {
-            case "1":
-        ?>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="mdi mdi-block-helper me-2"></i>
-                Correo Electronico no encontrado.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            <?php
-              break;
-
-            case "2":
-            ?>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="mdi mdi-block-helper me-2"></i>
-                Campos Vacios.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            <?php
-              break;
-
-            case "3":
-            ?>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="mdi mdi-block-helper me-2"></i>
-                Contraseña Incorrecta.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-        <?php
-              break;
-          }
-        }
-        ?>
-
+  <!-- Recuperar -->
+  <div class="card-body d-flex justify-content-center">
+    <div class="auth-content my-auto">
+      <div class="text-center">
+        <h3 class="mb-0">Recuperar Contraseña</h3>
+        <!-- <p class="text-muted mt-2">Reset Password with Minia.</p> -->
+      </div>
+      <div
+        class="alert alert-success text-center mb-4 mt-4 pt-2"
+        role="alert">
+        ¡Ingresa tu Correo Electrónico y te enviaremos instrucciones!
+      </div>
+      <form class="custom-form mt-4">
         <div class="mb-3">
-          <label class="form-label">Correo Electronico</label>
-          <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required>
+          <label class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingresa Correo Electrónico" />
         </div>
-        <div class="mb-3">
-          <div class="d-flex align-items-start">
-            <div class="flex-grow-1">
-              <label class="form-label">Contraseña</label>
-            </div>
-            <div class="flex-shrink-0">
-            </div>
-          </div>
-
-          <div class="input-group auth-pass-inputgroup">
-            <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" aria-label="Password" aria-describedby="password-addon" required>
-            <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-          </div>
-        </div>
-
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="remember-check">
-              <label class="form-check-label" for="remember-check">
-                Recuerdame
-              </label>
-            </div>
-          </div>
-
-        </div>
-
         <div class="mb-3 mt-4">
-          <input type="hidden" name="enviar" value="si">
-          <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Acceder</button>
-        </div>
-
-        <div class="container-options-login-govco">
-          <div class="mt-3">
-            <a href="view/recuperar/index.php">Olvidé mi contraseña</a>
-          </div>
-          <p class="mt-3">¿No tienes cuenta? &nbsp;
-            <a class="mt-3" href="view/registro/index.php">Regístrate aquí</a>
-          </p>
+          <a class="btn btn-primary w-100 waves-effect waves-light" id='btnrecuperar'>Recuperar</a>
         </div>
       </form>
+
+      <div class="mt-5 text-center">
+        <p class="text-muted mb-0">
+          ¿ Lo recuerdas ?
+          <a
+            href="../../index.php"
+            class="text-primary fw-semibold">
+            Iniciar sesión
+          </a>
+        </p>
+      </div>
     </div>
   </div>
 
@@ -331,22 +264,34 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
       flag_style: "2d", // estilo de bandera
       flag_size: 24, // tamaño de la bandera
       horizontal_position: "inline", // posición horizontal
-      flags_location: "flags\/", // Ubicación de la bandera
+      flags_location: "../../flags\/", // Ubicación de la bandera
     };
   </script>
 
-  <script src="js/gt.min.js" data-gt-widget-id="43217984"></script>
+  <script src="../../js/gt.min.js" data-gt-widget-id="43217984"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="js/tramites.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/buscador.js"></script>
-  <script src="js/entradas-de-texto.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <!-- pace js -->
-  <script src="assets/js/pace.min.js"></script>
-  <!-- password addon init -->
-  <script src="assets/js/pass-addon.init.js"></script>
+  <script src="../../js/tramites.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../js/buscador.js"></script>
+  <script src="../../js/entradas-de-texto.js"></script>
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../../assets/js/metisMenu.min.js"></script>
+  <script src="../../assets/js/simplebar.min.js"></script>
+  <script src="../../assets/js/waves.min.js"></script>
+  <script src="../../assets/js/feather.min.js"></script>
+  <script src="../../assets/js/pass-addon.init.js"></script>
+
+  <script src="../../assets/js/pace.min.js"></script>
+
+  <!-- Sweet Alerts js -->
+  <script src="../../assets/js/sweetalert2.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+  <!-- <script src="../../assets/js/validation.init.js"></script> -->
+
+  <script type="text/javascript" src="recuperar.js"></script>
 
 </body>
 

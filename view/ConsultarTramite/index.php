@@ -7,7 +7,7 @@
   <html lang="es">
 
   <head>
-    <title>Inicio Tramites</title>
+    <title>Consultar Tramite</title>
      <?php require_once("../html/head.php"); ?>
   </head>
 
@@ -25,7 +25,7 @@
             <div class="col-12">
               <div
                 class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0 font-size-18">Tramites</h4>
+                <h4 class="mb-sm-0 font-size-18">Consultar Tramite</h4>
 
                 <div class="page-title-right">
                   <ol class="breadcrumb m-0">
