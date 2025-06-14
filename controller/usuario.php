@@ -17,7 +17,7 @@ switch ($_GET["op"]) {
                 $_POST["usu_nit"],
                 $_POST["usu_correo"],
                 $_POST["usu_pass"],
-                "../assets/picture/avatar.png",2);
+                "../../assets/picture/avatar.png",2);
 
             $email->registrar($datos1[0] ['usu_id']);
             
@@ -88,5 +88,4 @@ switch ($_GET["op"]) {
             break;
 
 }
-/* registro con gmail = usu_img -> 3.Maquetacion = 1.20 <<<-----------------------------*/
 ?>

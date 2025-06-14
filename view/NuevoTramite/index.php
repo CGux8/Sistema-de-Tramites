@@ -69,7 +69,7 @@ if (isset($_SESSION["usu_id"])) {
                       <div class="row">
                         <div class="col-lg-3">
                           <div class="mb-3">
-                            <label for="choices-single-default" class="form-label font-size-15 text-muted">Dependencia</label>
+                            <h3 class="font-size-15 text-muted">Dependencia</h3>
                             <h6>SECRETARIA DE SALUD</h6>
                             <!-- <select class="form-control" data-trigger="" name="choices-single-default" id="choices-single-default" placeholder="This is a search placeholder">
                               <option value="">This is a placeholder</option>
@@ -81,13 +81,13 @@ if (isset($_SESSION["usu_id"])) {
                         </div>
                         <div class="col-lg-4">
                           <div class="mb-3">
-                            <label for="choices-single-default" class="form-label font-size-15 text-muted">Tramite</label>
+                            <h3 class="font-size-15 text-muted">Tramite</h3>
                             <h6>LICENCIA DE INHUMACIÓN DE CADAVERES</h6>
                           </div>
                         </div>
                         <div class="col-lg-4">
                           <div class="mb-3">
-                            <label for="choices-single-default" class="form-label font-size-15 text-muted">Descripción</label>
+                            <h3 class="font-size-15 text-muted">Descripción</h3>
                             <h6>Autorización para enterrar o depositar cadáveres, restos óseos y partes humanas en los cementerios.</h6>
                           </div>
                         </div>
@@ -107,7 +107,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-text-input" class="form-label">Nombres*</label>
-                              <input class="form-control" type="text" value="" id="example-text-input">
+                              <input class="form-control" type="text" value="" id="example-text-inputt">
                             </div>
                           </div>
                         </div>
