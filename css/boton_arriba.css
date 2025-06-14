@@ -1,17 +1,11 @@
-
-/* Volver arriba */
-
-/* Fuente iconografica */
-/* Descargar fuente iconografica y ajustar la ruta de las url del font-face */
-
 @font-face {
     font-family: 'govco-fontv2';
-    src: url('../assets/fonts/govco/govco-fontv2.eot?35076025');
-    src: url('../assets/fonts/govco/govco-fontv2.eot?35076025#iefix') format('embedded-opentype'),
-      url('../assets/fonts/govco/govco-fontv2.woff2?35076025') format('woff2'),
-      url('../assets/fonts/govco/govco-fontv2.woff?35076025') format('woff'),
+    src: url('../assets/font/govco/govco-fontv2.eot?35076025');
+    src: url('../assets/font/govco/govco-fontv2.eot?35076025#iefix') format('embedded-opentype'),
+      url('../assets/font/govco/govco-fontv2.woff2?35076025') format('woff2'),
+      url('../assets/font/govco/govco-fontv2.woff?35076025') format('woff'),
       url('../assets/icons/fonts/govco-font-icons.ttf') format('truetype'),
-      url('../assets/icons/govco/govco-fontv2.svg?35076025#govco-fontv2') format('svg');
+      url('../assets/icons/govco/govco-fontv2.svg?35076025#govco-fontv2') format('svg'); 
     font-weight: normal;
     font-style: normal;
   }

@@ -53,7 +53,7 @@ class Usuario extends Conectar
     }
 
     /* TODO: metodo para registrar un nuevo usuario en la base de datos */
-    public function registrar_usuario($usu_nomape, $usu_nit, $usu_correo, $usu_pass)
+    public function registrar_usuario($usu_nomape, $usu_nit, $usu_correo, $usu_pass, $usu_img, $est)
     {
 
         $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
@@ -67,9 +67,9 @@ class Usuario extends Conectar
         parent::set_names();
 
         /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
-        $sql = "INSERT INTO tm_usuario (usu_nomape,usu_nit,usu_correo,usu_pass)
+        $sql = "INSERT INTO tm_usuario (usu_nomape,usu_nit,usu_correo,usu_pass,usu_img,est)
                     VALUES
-                    (?,?,?,?)";
+                    (?,?,?,?,?,?)";
 
         /* TODO: Prepara la consulta SQL */
         $sql = $conectar->prepare($sql);
@@ -78,6 +78,8 @@ class Usuario extends Conectar
         $sql->bindValue(2, $usu_nit);
         $sql->bindValue(3, $usu_correo);
         $sql->bindValue(4, $textoCifrado);
+        $sql->bindValue(5, $usu_img);
+        $sql->bindValue(6, $est);
         /* TODO: Ejecuta la consulta SQL */
         $sql->execute();
 

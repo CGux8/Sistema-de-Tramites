@@ -4,19 +4,19 @@
  *  - Version: 4.0.0
  */
 
-/* Fuente iconografica */
-@font-face {
+
+/* @font-face {
   font-family: "govco-font";
   src: url("../assets/icons/fonts/govco-font-icons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* WorkSans-Regular */
+/* WorkSans-Regular 
 @font-face {
   font-family: 'WorkSans-Regular';
   src: url('../assets/fonts/Work_Sans/static/WorkSans-Regular.ttf');
-}
+} */
 
 body {
   margin: 0;

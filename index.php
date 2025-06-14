@@ -21,9 +21,9 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <!-- Bootstrap Css -->
   <link href="assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
   <!-- Icons Css -->
-    <link href="assets/css/icons.min-1.css" rel="stylesheet" type="text/css">
-     <!-- App Css-->
-    <link href="assets/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+  <!-- App Css-->
+  <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
   <link href="css/barras.css" rel="stylesheet" type="text/css">
   <link href="css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
   <link href="css/menu_navegacion.css" rel="stylesheet" type="text/css">
@@ -174,7 +174,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
 
         <div class="mb-3">
           <label class="form-label">Correo Electronico</label>
-          <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" required>
+          <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo Electronico" autocomplete="current-password" required>
         </div>
         <div class="mb-3">
           <div class="d-flex align-items-start">
@@ -186,12 +186,12 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
           </div>
 
           <div class="input-group auth-pass-inputgroup">
-            <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" aria-label="Password" aria-describedby="password-addon" required>
+            <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" aria-label="Password" aria-describedby="password-addon" autocomplete="current-password" required>
             <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
           </div>
         </div>
 
-        <div class="row mb-4">
+        
           <div class="col">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="remember-check">
@@ -201,17 +201,49 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
             </div>
           </div>
 
-        </div>
+        
 
-        <div class="mb-3 mt-4">
+        <div class="mb-3 mt-2">
           <input type="hidden" name="enviar" value="si">
           <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Acceder</button>
         </div>
 
         <div class="container-options-login-govco">
-          <div class="mt-3">
+          <div class="mt-2">
             <a href="view/recuperar/index.php">Olvidé mi contraseña</a>
           </div>
+
+          <div class="mt-1 pt-2 text-center">
+            <!-- <div class="signin-other-title">
+              <h6 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h6>
+            </div> -->
+
+            <ul class="list-inline mb-0">
+
+              <li class="list-inline-item">
+
+                <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
+                <div id="g_id_onload"
+                  data-client_id="554564814134-l9ps3t4up0n0p8u4ed99s4dtamp8celb.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-callback="handleCredentialResponse"
+                  data-auto_prompt="false">
+                </div>
+
+                <!--TODO: Configuración del botón de inicio de sesión con Google -->
+                <div class="g_id_signin"
+                  data-type="standard"
+                  data-shape="rectangular"
+                  data-theme="outline"
+                  data-text="signin_with"
+                  data-size="large"
+                  data-logo_alignment="left"></div>
+              </li>
+
+            </ul>
+          </div>
+
           <p class="mt-3">¿No tienes cuenta? &nbsp;
             <a class="mt-3" href="view/registro/index.php">Regístrate aquí</a>
           </p>
@@ -347,6 +379,10 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <script src="assets/js/pace.min.js"></script>
   <!-- password addon init -->
   <script src="assets/js/pass-addon.init.js"></script>
+  <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
+  <script src="https://accounts.google.com/gsi/client" async></script>
+
+  <script type="text/javascript" src="acceso.js"></script>
 
 </body>
 
