@@ -380,7 +380,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <!-- password addon init -->
   <script src="assets/js/pass-addon.init.js"></script>
   <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
-  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 
   <script type="text/javascript" src="acceso.js"></script>
 

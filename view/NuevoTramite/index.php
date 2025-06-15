@@ -66,31 +66,26 @@ if (isset($_SESSION["usu_id"])) {
 
 
                     <div class="card-body">
+                       <form method="post" id="inhumacion_form">
                       <div class="row">
-                        <div class="col-lg-3">
-                          <div class="mb-3">
-                            <h3 class="font-size-15 text-muted">Dependencia</h3>
-                            <h6>SECRETARIA DE SALUD</h6>
-                            <!-- <select class="form-control" data-trigger="" name="choices-single-default" id="choices-single-default" placeholder="This is a search placeholder">
-                              <option value="">This is a placeholder</option>
-                              <option value="Choice 1">Choice 1</option>
-                              <option value="Choice 2">Choice 2</option>
-                              <option value="Choice 3">Choice 3</option>
-                            </select> -->
+                          <div class="col-lg-3">
+                            <div class="mb-3">
+                              <h3 class="font-size-15 text-muted">Dependencia</h3>
+                              <h6>SECRETARIA DE SALUD</h6>
+                            </div>
                           </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="mb-3">
-                            <h3 class="font-size-15 text-muted">Tramite</h3>
-                            <h6>LICENCIA DE INHUMACIÓN DE CADAVERES</h6>
+                          <div class="col-lg-4">
+                            <div class="mb-3">
+                              <h3 class="font-size-15 text-muted">Tramite</h3>
+                              <h6>LICENCIA DE INHUMACIÓN DE CADAVERES</h6>
+                            </div>
                           </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="mb-3">
-                            <h3 class="font-size-15 text-muted">Descripción</h3>
-                            <h6>Autorización para enterrar o depositar cadáveres, restos óseos y partes humanas en los cementerios.</h6>
+                          <div class="col-lg-4">
+                            <div class="mb-3">
+                              <h3 class="font-size-15 text-muted">Descripción</h3>
+                              <h6>Autorización para enterrar o depositar cadáveres, restos óseos y partes humanas en los cementerios.</h6>
+                            </div>
                           </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -107,27 +102,27 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-text-input" class="form-label">Nombres*</label>
-                              <input class="form-control" type="text" value="" id="example-text-inputt">
+                              <input class="form-control" type="text" value="" name="inhum_nom" id="inhum_nom" required>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-3">
                           <div class="mb-3">
                             <label for="example-text-input" class="form-label">Primer Apellido*</label>
-                            <input class="form-control" type="text" value="" id="example-text-input">
+                            <input class="form-control" type="text" value="" name="inhum_papell" id="inhum_papell" required>
                           </div>
                         </div>
                         <div class="col-lg-3">
                           <div class="mb-3">
                             <label for="example-text-input" class="form-label">Segundo Apellido</label>
-                            <input class="form-control" type="text" value="" id="example-text-input">
+                            <input class="form-control" type="text" value="" name="inhum_sapell" id="inhum_sapell">
                           </div>
                         </div>
                         <div class="col-lg-2">
                           <div class="mb-3">
                             <div class="mb-3">
                               <label class="form-label">Sexo*</label>
-                              <select class="form-select">
+                              <select class="form-select" name="inhum_sex" id="inhum_sex" required>
                                 <option>Femenino</option>
                                 <option>Masculino</option>
                                 <option>Otro</option>
@@ -139,7 +134,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label class="form-label">Tipo de documento*</label>
-                              <select class="form-select">
+                              <select class="form-select" name="inhum_tip_doc" id="inhum_tip_doc" required>
                                 <option>Registro Civil</option>
                                 <option>Tarjeta de Identidad</option>
                                 <option>Cédula de Ciudadanía</option>
@@ -164,7 +159,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-number-input" class="form-label">Número de Documento*</label>
-                              <input class="form-control" type="number" value="" id="example-number-input">
+                              <input class="form-control" type="number" value="" name="inhum_num_doc" id="inhum_num_doc" required>
                             </div>
                           </div>
                         </div>
@@ -173,7 +168,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-text-input" class="form-label">Municipio de fallecimiento*</label>
-                              <input class="form-control" type="text" value="" id="example-text-input">
+                              <input class="form-control" type="text" value="" name="inhum_mun_fall" id="inhum_mun_fall" required>
                             </div>
                           </div>
                         </div>
@@ -181,7 +176,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label class="form-label">Manera de Muerte*</label>
-                              <select class="form-select">
+                              <select class="form-select" name="inhum_man_muert" id="inhum_man_muert" required>
                                 <option>Natural</option>
                                 <option>No Natural</option>
                                 <option>En Estudio</option>
@@ -193,7 +188,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-date-input" class="form-label">Fecha de Defunción*</label>
-                              <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
+                              <input class="form-control" type="date" value="" name="inhum_fecha_defun" id="inhum_fecha_defun" required>
                             </div>
                           </div>
                         </div>
@@ -201,7 +196,7 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-number-input" class="form-label">Nro. Certificado de Defunción*</label>
-                              <input class="form-control" type="number" value="" id="example-number-input">
+                              <input class="form-control" type="number" value="" name="inhum_cert_defun" id="inhum_cert_defun" required>
                             </div>
                           </div>
                         </div>
@@ -209,33 +204,68 @@ if (isset($_SESSION["usu_id"])) {
                           <div class="mb-3">
                             <div class="mb-3">
                               <label for="example-date-input" class="form-label">Fecha nacimiento* (Para muerte FETAL, registrar la misma fecha de fallecimiento)</label>
-                              <input class="form-control" type="date" value="2019-08-19" id="example-date-input">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6"><br>
-                          <h5>Destino Final</h5>
-                          <div class="mb-3">
-                            <div class="mb-3">
-                              <label class="form-label">Nombre del Cementerio o Crematorio*</label>
-                              <select class="form-select">
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                              </select>
+                              <input class="form-control" type="date" value="2019-08-19" name="inhum_fech_nac" id="inhum_fech_nac" required>
                             </div>
                           </div>
                         </div>
 
+                        <h5>Destino Final</h5>
+                        <div class="col-lg-6">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label class="form-label">Nombre del Cementerio o Crematorio*</label>
+                              <select class="form-select" name="inhum_cem_crem" id="inhum_cem_crem" required>
+                                <option value="">Seleccionar</option>
+                                <option>Jardines Del Palmar</option>
+                                <option>Cementerio Católico Central</option>
+                                <option>Unidad Crematoria Los Olivos</option>
+                                <option>Cementerio Católico Rozo</option>
+                                <option>Cementerio Católico La Buitrera</option>
+                                <option>Cementerio de Potrerillo</option>
+                                <option>Getsemaní Cristo Rey</option>
+                                <option>Cementerio Libre</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Otro:</label>
+                            <input class="form-control" type="text" value="" name="inhum_cem_crem" id="inhum_cem_crem">
+                          </div>
+                        </div>
+
                         <h5>Datos Funeraria</h5>
-                        <div class="col-lg-3">
+                        <div class="col-lg-6">
                           <div class="mb-3">
                             <div class="mb-3">
                               <label class="form-label">Nombre de la Funeraria*</label>
-                              <select class="form-select">
-                                <option></option>
-                                <option></option>
-                                <option></option>
+                              <select class="form-select" name="inhum_nom_fun" id="inhum_nom_fun" required>
+                                <option value="">Seleccionar</option>
+                                <option>Apoyo Fúnebre Nacional S.A.S</option>
+                                <option>Capillas de Velación Cristo Rey</option>
+                                <option>Casa Funerales El Prado</option>
+                                <option>Coorserpark S.A.S</option>
+                                <option>El Paraíso Salas de Velación</option>
+                                <option>Funerales Correa</option>
+                                <option>Funerales La Esperanza Servicios Integrales S.A.S</option>
+                                <option>Funerales La Maria S.A.S</option>
+                                <option>Funerales La María de Candelaria S.A.S</option>
+                                <option>Funerales San Martin Pradera SAS</option>
+                                <option>Funerales Villa de Paz Palmira</option>
+                                <option>Funerales y Preexequiales Santa Isabel</option>
+                                <option>Funeraria Inversiones y Planes de la Paz</option>
+                                <option>Funeraria La Piedad Capillas</option>
+                                <option>Funeraria Metropolitana Campos de Paz</option>
+                                <option>Funeraria Santa Cruz</option>
+                                <option>Jardines del Renacer S.A.S</option>
+                                <option>Parque Cementerio Jardines Del Palmar</option>
+                                <option>Preexequiales Villa de las Palmas</option>
+                                <option>SERCOFUN LTDA. Funerales Los Olivos</option>
+                                <option>SERFUCOM S.A.S</option>
+                                <option>Servicios Excequiales Palomino Velasco S.A.S</option>
+                                <option>Servicios Funerarios Y Cremaciones San José Ltda.</option>
+                                <option>Funeraria Capillas Manantial de Paz</option>
                               </select>
                             </div>
                           </div>
@@ -243,12 +273,33 @@ if (isset($_SESSION["usu_id"])) {
                         <div class="col-lg-4">
                           <div class="mb-3">
                             <label for="example-text-input" class="form-label">Nombres y Apellidos de quien realiza el trámite*</label>
-                            <input class="form-control" type="text" value="" id="example-text-input">
+                            <input class="form-control" type="text" value="" name="inhum_nom_real_tram" id="inhum_nom_real_tram" required>
                           </div>
                         </div>
 
-                  
+                        <div class="col-lg-12">
+                          <div class="mb-3">
 
+
+                            <div class="fallback">
+                              <input name="file" type="file" multiple="multiple">
+                            </div>
+                            <div class="dz-message needsclick">
+                              <div class="mb-3">
+                                <i class="display-4 text-muted bx bx-cloud-upload"></i>
+                              </div>
+
+                              <h5>Suelte los archivos aquí o haga clic para cargar.</h5>
+                            </div>
+
+
+                          </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                          <button type="button" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
+                          <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                        </div>
+                  </form>
 
                       </div>
                     </div>

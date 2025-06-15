@@ -6,5 +6,7 @@
 <script src="../../assets/js/feather.min.js"></script>
 <script src="../../assets/js/pace.min.js"></script>
 <script src="../../assets/js/choices.min.js"></script>
+<!-- dropzone js -->
+<script src="../../assets/js/dropzone.min.js"></script>
 <script src="../../assets/js/app.js"></script>
 <!-- <script src="../../assets/js/form-advanced.init.js"></script> -->
