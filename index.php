@@ -379,6 +379,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <script src="assets/js/pace.min.js"></script>
   <!-- password addon init -->
   <script src="assets/js/pass-addon.init.js"></script>
+  
   <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 

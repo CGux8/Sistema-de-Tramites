@@ -57,17 +57,13 @@ if (isset($_SESSION["usu_id"])) {
                             5- <strong>En caso de muerte NO NATURAL: </strong>Oficio expedido por Fiscalía. <br>
                             6- <strong>Para CREMACIÓN: </strong>Autorización de cremación o manifestación escrita de la voluntad de la persona en vida o de sus familiares después de la muerte (adjuntar documento de identidad de cada uno) .
                           </p>
-
                         </div>
                       </div>
-
                     </div>
 
-
-
                     <div class="card-body">
-                       <form method="post" id="inhumacion_form">
-                      <div class="row">
+                      <form method="post" id="inhumacion_form">
+                        <div class="row">
                           <div class="col-lg-3">
                             <div class="mb-3">
                               <h3 class="font-size-15 text-muted">Dependencia</h3>
@@ -86,7 +82,7 @@ if (isset($_SESSION["usu_id"])) {
                               <h6>Autorización para enterrar o depositar cadáveres, restos óseos y partes humanas en los cementerios.</h6>
                             </div>
                           </div>
-                      </div>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -231,7 +227,7 @@ if (isset($_SESSION["usu_id"])) {
                         <div class="col-lg-4">
                           <div class="mb-3">
                             <label for="example-text-input" class="form-label">Otro:</label>
-                            <input class="form-control" type="text" value="" name="inhum_cem_crem" id="inhum_cem_crem">
+                            <input class="form-control" type="text" value="" name="inhum_cem_crem7" id="inhum_cem_crem7">
                           </div>
                         </div>
 
@@ -278,30 +274,24 @@ if (isset($_SESSION["usu_id"])) {
                         </div>
 
                         <div class="col-lg-12">
-                          <div class="mb-3">
-
-
-                            <div class="fallback">
-                              <input name="file" type="file" multiple="multiple">
+                          <div class="dropzone" id="dropzone">
+                            <div class="dz-default dz-message">
+                              <button class="dz-button" type="button">
+                                <img src="../../assets/img/upload.png" alt="">
+                              </button>
+                              <div class="dz-message" data-dz-message><span>Arrastra y suelta tu archivo aquí o haz click para seleccionar tu archivo <br> Maximo 5 archivos de tipo *.PDF, y solo de peso maximo de 10MB </span></div>
                             </div>
-                            <div class="dz-message needsclick">
-                              <div class="mb-3">
-                                <i class="display-4 text-muted bx bx-cloud-upload"></i>
-                              </div>
-
-                              <h5>Suelte los archivos aquí o haga clic para cargar.</h5>
-                            </div>
-
-
                           </div>
                         </div>
+
                         <div class="d-flex flex-wrap gap-2 mt-4">
-                          <button type="button" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
-                          <button type="submit" class="btn btn-primary waves-effect waves-light">Guardar</button>
+                          <button type="button" id="btnlimpiar" class="btn btn-secondary waves-effect waves-light">Limpiar</button>
+                          <button type="submit" id="btnguardar" class="btn btn-primary waves-effect waves-light">Guardar</button>
                         </div>
-                  </form>
+
 
                       </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -321,9 +311,12 @@ if (isset($_SESSION["usu_id"])) {
 
     <?php require_once("../html/js.php"); ?>
 
+    <script type="text/javascript" src="inhumacion.js"></script>
+
   </body>
 
   </html>
+
 <?php
 } else {
   header("Location:" . conectar::ruta() . "index.php");

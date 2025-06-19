@@ -60,7 +60,29 @@ class Inhumacion extends Conectar
         $sql1 = "select last_insert_id() as 'inhum_id'";
         $sql1 = $conectar->prepare($sql1);
         $sql1->execute();
-        return $sql1->fetchAll();
+        return $sql1->fetchAll(pdo::FETCH_ASSOC);
+    }
+
+    public function insert_documento_inhumacion($inhum_id,$doc_nom,$usu_id)
+    {
+        /* TODO: Establece la conexion a la base de datos utilizando el metodo de la clase padre */
+        $conectar = parent::conexion();
+
+        /* TODO: Establece la codificacion de caracteres a utf8 utilizando el metodo de la clase padre */
+        parent::set_names();
+
+        /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
+        $sql = "INSERT INTO td_doc_inhumacion (inhum_id,doc_nom,usu_id)
+                VALUES (?,?,?)";
+
+        /* TODO: Prepara la consulta SQL */
+        $sql = $conectar->prepare($sql);
+        /* TODO: vincular los valores a los parametros de la consulta SQL */
+        $sql->bindValue(1, $inhum_id);
+        $sql->bindValue(2, $doc_nom);
+        $sql->bindValue(3, $usu_id);
+        /* TODO: Ejecuta la consulta SQL */
+        $sql->execute();
+
     }
 }
-?>

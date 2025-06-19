@@ -21,9 +21,9 @@ function handleCredentialResponse(response){
         success: function(data){
             console.log(data);
             if(data === "0"){
-                window.location.href = 'view/NuevoTramite/index.php'
+                window.location.href = 'view/NuevoTramite/inhumacion.php'
             }else if (data === "1"){
-                window.location.href = 'view/NuevoTramite/index.php'
+                window.location.href = 'view/NuevoTramite/inhumacion.php'
             }
         }
     })

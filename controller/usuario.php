@@ -63,7 +63,6 @@ switch ($_GET["op"]) {
 
                         $_SESSION["usu_id"] = $datos1[0]["usu_id"];
                         $_SESSION["usu_nomape"] = $nombre;
-                        /* $_SESSION["usu_nit"] = $nit; */
                         $_SESSION["usu_correo"] = $email;
                         $_SESSION["usu_img"] =  $imagen;
                         /* $_SESSION["rol_id"] =  $datos1[0]["rol_id"]; */
