@@ -9,6 +9,9 @@ $email = new Email();
 switch ($_GET["op"]) {
     case "registrar":
 
+        $area_id = 1;
+        $tra_id= 1;
+
         $datos = $inhumacion->registrar_inhumacion(
             $_POST["inhum_nom"],
             $_POST["inhum_papell"],
@@ -25,12 +28,20 @@ switch ($_GET["op"]) {
             $_POST["inhum_nom_fun"],
             $_POST["inhum_nom_real_tram"],
             $_SESSION["usu_id"],
+            $area_id,
+            $tra_id
         );
 
         if (is_array($datos) == true and count($datos) == 0) {
             echo "0";
         } else {
-            echo json_encode($datos);
+
+            $anio = date("Y");
+            $cod_tram = "3521";
+
+            $rdcdo = $anio."-".$cod_tram."-".$datos[0]["inhum_id"];
+            
+            echo $rdcdo;
 
             if (empty($_FILES['file']['name'])) {
             } else {
@@ -45,11 +56,15 @@ switch ($_GET["op"]) {
                     $nombre = $_FILES['file']['tmp_name'][$index];
                     $destino = $ruta . $_FILES['file']['name'][$index];
 
-                    $documento->insert_documento_inhumacion($datos[0]["inhum_id"], $nombre,$_SESSION["usu_id"]); /* $_FILES['file']['name'][$index], $_SESSION["usu_id"], 'Pendiente'); */
+                    $inhumacion->insert_documento_inhumacion($datos[0]["inhum_id"], $_FILES['file']['name'][$index], $_SESSION["usu_id"], 'Pendiente');
 
                     move_uploaded_file($nombre, $destino);
                 }
             }
+
+            /* TODO:Enviar Alerta por Email */
+             $email->enviar_registro($datos[0]["inhum_id"]);
+
         }
         break;
 }

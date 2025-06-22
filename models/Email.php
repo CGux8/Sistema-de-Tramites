@@ -6,6 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once("../config/conexion.php");
 require_once("../models/Usuario.php");
+require_once("../models/Inhumacion.php");
 
 class Email extends PHPMailer {
 
@@ -106,6 +107,50 @@ private function generarXPassUsu() {
     $resultado = $parteAlfanumerica . $parteNumerica;
     return substr($resultado, 0, 6);
 }   
+
+public function enviar_registro($inhum_id){
+
+    $conexion = new Conectar();
+
+    $inhumacion = new Inhumacion();
+    $datos = $inhumacion->get_documento_x_id($inhum_id);
+
+    $this->IsSMTP();
+    $this->Host = 'smtp.gmail.com';
+    $this->Port = 587;
+    $this->SMTPAuth = true;
+    $this->SMTPSecure = 'tls';
+
+    $this->Username = $this->gCorreo;
+    $this->Password = $this->gContrasena;
+    $this->setFrom($this->gCorreo, 'Nuevo Trámite en Sistema de Trámites Palmira');
+
+    $this->CharSet = 'UTF-8';
+    $this->addAddress($datos[0]['usu_correo']);
+    $this->addAddress($datos[0]['area_correo']);
+    $this->isHTML(true);
+    $this->Subject = 'Tramites Palmira';
+
+    $url = $conexion->ruta();
+
+    $cuerpo = file_get_contents('../assets/email/enviar.html');
+   
+    $cuerpo = str_replace("xlinksistema", $url, $cuerpo);
+
+    $cuerpo = str_replace("xnrotramite", $datos[0]["rdcdo"], $cuerpo);
+    $cuerpo = str_replace("xarea", $datos[0]["area_nom"], $cuerpo);
+    $cuerpo = str_replace("xtramite", $datos[0]["tra_nom"], $cuerpo);
+
+    $this->Body = $cuerpo;
+    $this->AltBody = strip_tags("Enviar Registro de Inhumación");
+
+    try{
+        $this->send();
+        return true;
+    }catch (Exception $e) {
+        return false;
+    }
+}
 
 }
 

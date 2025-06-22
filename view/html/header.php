@@ -24,15 +24,15 @@
               </a> -->
       </div>
 
-      <!-- <button
+       <button
         type="button"
         class="btn btn-sm px-3 font-size-16 header-item"
         id="vertical-menu-btn">
         <i class="fa fa-fw fa-bars"></i>
-      </button> -->
+      </button>
 
       <!-- App Search-->
-      <!-- <form class="app-search d-none d-lg-block">
+       <form class="app-search d-none d-lg-block">
         <div class="position-relative">
           <input
             type="text"
@@ -42,7 +42,7 @@
             <i class="bx bx-search-alt align-middle"></i>
           </button>
         </div>
-      </form> -->
+      </form>
     </div>
 
     <div class="d-flex">
