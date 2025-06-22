@@ -1,9 +1,9 @@
 <?php
-require_once("config/conexion.php");
+require_once("../../config/conexion.php");
 if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
-  require_once("models/Usuario.php");
+  require_once("../../models/Usuario.php");
   $usuario = new Usuario();
-  $usuario->login();
+  $usuario->login_colaborador();
 }
 ?>
 <!DOCTYPE html>
@@ -14,22 +14,24 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="https://tramites.palmira.gov.co/info/palmira_se/web/portal/img/favicon.png" />
-  <title>Trámites</title>
+  <title>Colaborador</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"
     crossorigin="anonymous">
+    <!-- Sweet Alert-->
+  <link href="../../css/sweetalert2.min.css" rel="stylesheet" type="text/css">
   <!-- Bootstrap Css -->
-  <link href="assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
   <!-- Icons Css -->
-  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/icons.min.css" rel="stylesheet" type="text/css">
   <!-- App Css-->
-  <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
-  <link href="css/barras.css" rel="stylesheet" type="text/css">
-  <link href="css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
-  <link href="css/menu_navegacion.css" rel="stylesheet" type="text/css">
-  <link href="css/login.css" rel="stylesheet" type="text/css">
-  <link href="css/boton_arriba.css" rel="stylesheet" type="text/css">
-  <link href="css/entradas-de-texto.css" rel="stylesheet" type="text/css">
+  <link href="../../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+  <link href="../../css/barras.css" rel="stylesheet" type="text/css">
+  <link href="../../css/barra_accesibilidad.css" rel="stylesheet" type="text/css">
+  <link href="../../css/menu_navegacion.css" rel="stylesheet" type="text/css">
+  <link href="../../css/login.css" rel="stylesheet" type="text/css">
+  <link href="../../css/boton_arriba.css" rel="stylesheet" type="text/css">
+  <link href="../../css/entradas-de-texto.css" rel="stylesheet" type="text/css">
 </head>
 
 <body id="para-mirar">
@@ -131,7 +133,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
   <!-- Login -->
   <div class="card-body d-flex justify-content-center" id="para-mirar">
     <div class="inicio-sesion-govco" data-content="natural">
-      <h2>Inicio de sesión</h2>
+      <h2>Inicio de sesión <br> Personal  Alcaldía</h2>
 
       <!-- Correo electronico -->
       <form class="custom-form mt-4 pt-2" action="" method="post">
@@ -192,14 +194,14 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
         </div>
 
 
-        <div class="col">
+      <!--   <div class="col">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="remember-check">
             <label class="form-check-label" for="remember-check">
               Recuerdame
             </label>
           </div>
-        </div>
+        </div> -->
 
 
 
@@ -209,9 +211,9 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
         </div>
 
         <div class="container-options-login-govco">
-          <div class="mt-2">
-            <a href="view/recuperar/index.php">Olvidé mi contraseña</a>
-          </div>
+          <!-- <div class="mt-2">
+            <a href="../../view/recuperar/index.php">Olvidé mi contraseña</a>
+          </div> -->
 
           <div class="mt-1 pt-2 text-center">
             <!-- <div class="signin-other-title">
@@ -244,11 +246,6 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
             </ul>
           </div>
 
-          <p class="mt-3">¿No tienes cuenta? &nbsp;
-            <a class="mt-3" href="view/registro/index.php">Regístrate aquí</a>
-
-          <p class="mt-3">Acceso al personal &nbsp;
-            <a class="mt-3" href="view/accesopersonal/index.php">Acceder</a>
           </p>
         </div>
       </form>
@@ -366,27 +363,30 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
       flag_style: "2d", // estilo de bandera
       flag_size: 24, // tamaño de la bandera
       horizontal_position: "inline", // posición horizontal
-      flags_location: "flags\/", // Ubicación de la bandera
+      flags_location: "../../flags\/", // Ubicación de la bandera
     };
   </script>
 
-  <script src="js/gt.min.js" data-gt-widget-id="43217984"></script>
+  <script src="../../js/gt.min.js" data-gt-widget-id="43217984"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="js/tramites.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/buscador.js"></script>
-  <script src="js/entradas-de-texto.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../../js/tramites.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../js/buscador.js"></script>
+  <script src="../../js/entradas-de-texto.js"></script>
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/bootstrap.bundle.min.js"></script>
   <!-- pace js -->
-  <script src="assets/js/pace.min.js"></script>
+  <script src="../../assets/js/pace.min.js"></script>
   <!-- password addon init -->
-  <script src="assets/js/pass-addon.init.js"></script>
+  <script src="../../assets/js/pass-addon.init.js"></script>
 
   <!--TODO: Script para cargar la API de Google Sign-In de manera asíncrona -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-  <script type="text/javascript" src="acceso.js"></script>
+    <!-- Sweet Alerts js -->
+  <script src="../../assets/js/sweetalert2.min.js"></script>
+
+  <script type="text/javascript" src="accesopersonal.js"></script>
 
 </body>
 

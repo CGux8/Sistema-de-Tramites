@@ -9,7 +9,7 @@ $email = new Email();
 switch ($_GET["op"]) {
     case "registrar":
 
-        $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
+        $datos = $usuario->get_usuario_correo($_POST["usu_correo"],1);
         if (is_array($datos) && count($datos) == 0) {
 
             $datos1 = $usuario->registrar_usuario(
@@ -57,7 +57,7 @@ switch ($_GET["op"]) {
                         $imagen = !empty($reponsePayload->picture) ? $reponsePayload->picture : '';
                     }
 
-                    $datos = $usuario->get_usuario_correo($email);
+                    $datos = $usuario->get_usuario_correo($email,1);
                     if(is_array($datos) == true and count($datos) == 0){
                         $datos1 = $usuario->registrar_usuario($nombre,"",$email,"",$imagen,1);
 
@@ -65,7 +65,7 @@ switch ($_GET["op"]) {
                         $_SESSION["usu_nomape"] = $nombre;
                         $_SESSION["usu_correo"] = $email;
                         $_SESSION["usu_img"] =  $imagen;
-                        /* $_SESSION["rol_id"] =  $datos1[0]["rol_id"]; */
+                        $_SESSION["rol_id"] =  $datos1[0]["rol_id"];
 
                         echo "1";
                     }else{
@@ -76,7 +76,52 @@ switch ($_GET["op"]) {
                         /* $_SESSION["usu_nit"] = $nit; */
                         $_SESSION["usu_correo"] = $email;
                         $_SESSION["usu_img"] =  $imagen;
-                        /* $_SESSION["rol_id"] =  $datos[0]["rol_id"]; */
+                        $_SESSION["rol_id"] =  $datos[0]["rol_id"];
+
+                        echo "0";
+                    }
+                }else{
+                    echo json_encode(['error' => '¡Los datos de la cuenta no están disponibles!']);
+                }
+            }
+            break;
+
+            case "colaboradorgoogle":
+            if($_SERVER["REQUEST_METHOD"] === "POST" && $_SERVER["CONTENT_TYPE"] === "application/json"){
+                //TODO: Recuperar el JSON del cuerpo POST
+                $jsonStr = file_get_contents('php://input');
+                $jsonObj = json_decode($jsonStr);
+
+                if(!empty($jsonObj->request_type) && $jsonObj->request_type == 'user_auth'){
+                    $credential = !empty($jsonObj->credential) ? $jsonObj->credential : '';
+
+                    //TODO: Decodificar el payload de la respuesta desde el token JWT
+                    $parts = explode(".",$credential);
+                    $header = base64_decode($parts[0]);
+                    $payload = base64_decode($parts[1]);
+                    $signature = base64_decode($parts[2]);
+
+                    $reponsePayload = json_decode($payload);
+
+                    if(!empty($reponsePayload)){
+                        //TODO: Información del perfil del usuario
+                        $nombre = !empty($reponsePayload->name) ? $reponsePayload->name : '';
+                        $email = !empty($reponsePayload->email) ? $reponsePayload->email : '';
+                        $imagen = !empty($reponsePayload->picture) ? $reponsePayload->picture : '';
+                    }
+
+                    $datos = $usuario->get_usuario_correo($email,2);
+                    if(is_array($datos) == true and count($datos) == 0){
+                        echo "1";
+                    }else{
+                        $usu_id = $datos[0]["usu_id"];
+
+                        $_SESSION["usu_id"] = $usu_id;  
+                        $_SESSION["usu_nomape"] = $nombre;
+                        /* $_SESSION["usu_nit"] = $nit; */
+                        $_SESSION["usu_correo"] = $email;
+                        $_SESSION["usu_img"] =  $imagen;
+                        $_SESSION["rol_id"] =  $datos[0]["rol_id"];
 
                         echo "0";
                     }
@@ -87,4 +132,5 @@ switch ($_GET["op"]) {
             break;
 
 }
+
 ?>

@@ -9,7 +9,7 @@ $email = new Email();
 switch ($_GET["op"]) {
     case "recuperar":
 
-        $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
+        $datos = $usuario->get_usuario_correo($_POST["usu_correo"],1);
         if (is_array($datos) && count($datos) == 0) {
             echo "0"; // No existe el correo
         }else{

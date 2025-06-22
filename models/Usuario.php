@@ -18,7 +18,7 @@ class Usuario extends Conectar
                 header("Location:" . conectar::ruta() . "index.php?m=2");
                 exit();
             } else {
-                $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ?";
+                $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id = 1";
                 $sql = $conectar->prepare($sql);
                 $sql->bindValue(1, $correo);
                 $sql->execute();
@@ -29,24 +29,71 @@ class Usuario extends Conectar
                     $iv_dec = substr(base64_decode($textoCifrado), 0, openssl_cipher_iv_length($this->cipher));
                     $cifradoSinIV = substr(base64_decode($textoCifrado), openssl_cipher_iv_length($this->cipher));
                     $textoDescifrado = openssl_decrypt($cifradoSinIV, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv_dec);
-               
+
                     if ($textoDescifrado == $pass) {
-                        if (is_array($resultado) and count($resultado)>0) {
+                        if (is_array($resultado) and count($resultado) > 0) {
                             /* session_start(); */
                             $_SESSION["usu_id"] = $resultado["usu_id"];
                             $_SESSION["usu_nomape"] = $resultado["usu_nomape"];
                             $_SESSION["usu_nit"] = $resultado["usu_nit"];
                             $_SESSION["usu_correo"] = $resultado["usu_correo"];
                             $_SESSION["usu_img"] = $resultado["usu_img"];
+                            $_SESSION["rol_id"] = $resultado["rol_id"];
                             header("Location:" . conectar::ruta() . "view/Home/");
                             exit();
-                        } 
-                    } else{
+                        }
+                    } else {
                         header("Location:" . conectar::ruta() . "index.php?m=3");
                         exit();
                     }
-                }else{
-                     header("Location:" . conectar::ruta() . "index.php?m=1");
+                } else {
+                    header("Location:" . conectar::ruta() . "index.php?m=1");
+                }
+            }
+        }
+    }
+
+    public function login_colaborador()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        if (isset($_POST["enviar"])) {
+            $correo = $_POST["usu_correo"];
+            $pass = $_POST["usu_pass"];
+            if (empty($correo) and empty($pass)) {
+                header("Location:" . conectar::ruta() . "view/accesopersonal/index.php?m=2");
+                exit();
+            } else {
+                $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id = 2";
+                $sql = $conectar->prepare($sql);
+                $sql->bindValue(1, $correo);
+                $sql->execute();
+                $resultado = $sql->fetch();
+                if ($resultado) {
+                    $textoCifrado = $resultado["usu_pass"];
+
+                    $iv_dec = substr(base64_decode($textoCifrado), 0, openssl_cipher_iv_length($this->cipher));
+                    $cifradoSinIV = substr(base64_decode($textoCifrado), openssl_cipher_iv_length($this->cipher));
+                    $textoDescifrado = openssl_decrypt($cifradoSinIV, $this->cipher, $this->key, OPENSSL_RAW_DATA, $iv_dec);
+
+                    if ($textoDescifrado == $pass) {
+                        if (is_array($resultado) and count($resultado) > 0) {
+                            /* session_start(); */
+                            $_SESSION["usu_id"] = $resultado["usu_id"];
+                            $_SESSION["usu_nomape"] = $resultado["usu_nomape"];
+                            $_SESSION["usu_nit"] = $resultado["usu_nit"];
+                            $_SESSION["usu_correo"] = $resultado["usu_correo"];
+                            $_SESSION["usu_img"] = $resultado["usu_img"];
+                            $_SESSION["rol_id"] = $resultado["rol_id"];
+                            header("Location:" . conectar::ruta() . "view/ConsultarTramite/");
+                            exit();
+                        }
+                    } else {
+                        header("Location:" . conectar::ruta() . "view/accesopersonal/index.php?m=3");
+                        exit();
+                    }
+                } else {
+                    header("Location:" . conectar::ruta() . "view/accesopersonal/index.php?m=1");
                 }
             }
         }
@@ -67,9 +114,9 @@ class Usuario extends Conectar
         parent::set_names();
 
         /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
-        $sql = "INSERT INTO tm_usuario (usu_nomape,usu_nit,usu_correo,usu_pass,usu_img,est)
+        $sql = "INSERT INTO tm_usuario (usu_nomape,usu_nit,usu_correo,usu_pass,usu_img,rol_id,est)
                     VALUES
-                    (?,?,?,?,?,?)";
+                    (?,?,?,?,?,1,?)";
 
         /* TODO: Prepara la consulta SQL */
         $sql = $conectar->prepare($sql);
@@ -90,7 +137,7 @@ class Usuario extends Conectar
         return $sql1->fetchAll();
     }
 
-    public function get_usuario_correo($usu_correo)
+    public function get_usuario_correo($usu_correo, $rol_id)
     {
 
         /* TODO: Establece la conexion a la base de datos utilizando el metodo de la clase padre */
@@ -101,12 +148,14 @@ class Usuario extends Conectar
 
         /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
         $sql = "SELECT * FROM tm_usuario
-        WHERE usu_correo = ?";
+        WHERE usu_correo = ? 
+        AND rol_id = ?";
 
         /* TODO: Prepara la consulta SQL */
         $sql = $conectar->prepare($sql);
         /* TODO: vincular los valores a los parametros de la consulta SQL */
         $sql->bindValue(1, $usu_correo);
+        $sql->bindValue(2, $rol_id);
         /* TODO: Ejecuta la consulta SQL */
         $sql->execute();
         return $sql->fetchAll();
