@@ -108,4 +108,24 @@ class Inhumacion extends Conectar
         $sql->execute();
         return $sql->fetchAll(pdo::FETCH_ASSOC);
     }
+
+    public function get_documento_x_usu($usu_id)
+    {
+        /* TODO: Establece la conexion a la base de datos utilizando el metodo de la clase padre */
+        $conectar = parent::conexion();
+
+        /* TODO: Establece la codificacion de caracteres a utf8 utilizando el metodo de la clase padre */
+        parent::set_names();
+
+        /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
+        $sql = "CALL sp_l_documento_02(?);";
+
+        /* TODO: Prepara la consulta SQL */
+        $sql = $conectar->prepare($sql);
+        /* TODO: vincular los valores a los parametros de la consulta SQL */
+        $sql->bindValue(1, $usu_id);
+        /* TODO: Ejecuta la consulta SQL */
+        $sql->execute();
+        return $sql->fetchAll(pdo::FETCH_ASSOC);
+    }
 }

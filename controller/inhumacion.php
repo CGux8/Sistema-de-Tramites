@@ -10,7 +10,7 @@ switch ($_GET["op"]) {
     case "registrar":
 
         $area_id = 1;
-        $tra_id= 1;
+        $tra_id = 1;
 
         $datos = $inhumacion->registrar_inhumacion(
             $_POST["inhum_nom"],
@@ -39,8 +39,8 @@ switch ($_GET["op"]) {
             $anio = date("Y");
             $cod_tram = "3521";
 
-            $rdcdo = $anio."-".$cod_tram."-".$datos[0]["inhum_id"];
-            
+            $rdcdo = $anio . "-" . $cod_tram . "-" . $datos[0]["inhum_id"];
+
             echo $rdcdo;
 
             if (empty($_FILES['file']['name'])) {
@@ -63,8 +63,37 @@ switch ($_GET["op"]) {
             }
 
             /* TODO:Enviar Alerta por Email */
-             $email->enviar_registro($datos[0]["inhum_id"]);
-
+            $email->enviar_registro($datos[0]["inhum_id"]);
         }
+        break;
+
+    /* TODO: Listado de usuario segun formato json para el datatable */
+    case "listarusuario":
+        $datos = $inhumacion->get_documento_x_usu($_SESSION["usu_id"]);
+        $data = array();
+        foreach ($datos as $row) {
+            $sub_array = array();
+            $sub_array[] = $row["rdcdo"];
+            $sub_array[] = $row["fech_crea"];
+            $sub_array[] = $row["area_nom"];
+            $sub_array[] = $row["tra_nom"];
+            $sub_array[] = $row["usu_nomape"];
+            /* if ($row["doc_estado"] == 'Pendiente') {
+                $sub_array[] = "<span class='badge bg-warning'>Pendiente</span>";
+            } else if ($row["doc_estado"] == 'Terminado') {
+                $sub_array[] = "<span class='badge bg-primary'>Terminado</span>";
+            } */
+            $sub_array[] = '<button type="button" class="btn btn-soft-primary waves-effect waves-light btn-sm" onClick="ver(' . $row["inhum_id"] . ')"><i class=" bx bx-message-alt-dots font-size-16 align-middle"></i></button>';
+            $data[] = $sub_array;
+        }
+
+        $results = array(
+            "sEcho" => 1,
+            "iTotalRecords" => count($data),
+            "iTotalDisplayRecords" => count($data),
+            "aaData" => $data
+        );
+
+        echo json_encode($results);
         break;
 }
