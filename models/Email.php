@@ -63,7 +63,7 @@ public function recuperar($usu_correo){
     $conexion = new Conectar();
 
     $usuario = new Usuario();
-    $datos = $usuario->get_usuario_correo($usu_correo,1);
+    $datos = $usuario->get_usuario_correo($usu_correo);  /* aqui tenia un 1 */
 
     $this->IsSMTP();
     $this->Host = 'smtp.gmail.com';

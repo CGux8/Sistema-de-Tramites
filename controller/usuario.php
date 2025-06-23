@@ -9,7 +9,7 @@ $email = new Email();
 switch ($_GET["op"]) {
     case "registrar":
 
-        $datos = $usuario->get_usuario_correo($_POST["usu_correo"],1);
+        $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
         if (is_array($datos) && count($datos) == 0) {
 
             $datos1 = $usuario->registrar_usuario(
@@ -57,7 +57,7 @@ switch ($_GET["op"]) {
                         $imagen = !empty($reponsePayload->picture) ? $reponsePayload->picture : '';
                     }
 
-                    $datos = $usuario->get_usuario_correo($email,1);
+                    $datos = $usuario->get_usuario_correo($email);
                     if(is_array($datos) == true and count($datos) == 0){
                         $datos1 = $usuario->registrar_usuario($nombre,"",$email,"",$imagen,1);
 
@@ -110,7 +110,7 @@ switch ($_GET["op"]) {
                         $imagen = !empty($reponsePayload->picture) ? $reponsePayload->picture : '';
                     }
 
-                    $datos = $usuario->get_usuario_correo($email,2);
+                    $datos = $usuario->get_usuario_correo($email);
                     if(is_array($datos) == true and count($datos) == 0){
                         echo "1";
                     }else{

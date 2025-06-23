@@ -64,7 +64,7 @@ class Usuario extends Conectar
                 header("Location:" . conectar::ruta() . "view/accesopersonal/index.php?m=2");
                 exit();
             } else {
-                $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id = 2";
+                $sql = "SELECT * FROM tm_usuario WHERE usu_correo = ? AND rol_id IN (2,3)";
                 $sql = $conectar->prepare($sql);
                 $sql->bindValue(1, $correo);
                 $sql->execute();
@@ -137,7 +137,7 @@ class Usuario extends Conectar
         return $sql1->fetchAll();
     }
 
-    public function get_usuario_correo($usu_correo, $rol_id)
+    public function get_usuario_correo($usu_correo,)
     {
 
         /* TODO: Establece la conexion a la base de datos utilizando el metodo de la clase padre */
@@ -148,14 +148,12 @@ class Usuario extends Conectar
 
         /* TODO: consulta SQL para insertar un nuevo usuario en la tabla tm_usuario */
         $sql = "SELECT * FROM tm_usuario
-        WHERE usu_correo = ? 
-        AND rol_id = ?";
+        WHERE usu_correo = ?";
 
         /* TODO: Prepara la consulta SQL */
         $sql = $conectar->prepare($sql);
         /* TODO: vincular los valores a los parametros de la consulta SQL */
         $sql->bindValue(1, $usu_correo);
-        $sql->bindValue(2, $rol_id);
         /* TODO: Ejecuta la consulta SQL */
         $sql->execute();
         return $sql->fetchAll();
