@@ -61,7 +61,7 @@
           <li>
             <a href="../mntusuario/">
               <i data-feather="users"></i>
-              <span data-key="t-apps">Mantenimiento Usuario</span>
+              <span data-key="t-apps">Mantenimiento Colaborador</span>
             </a>
           </li>
 

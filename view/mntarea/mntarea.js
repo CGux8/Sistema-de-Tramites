@@ -23,14 +23,14 @@ function guardaryeditar(e){
                 $("#listado_table").DataTable().ajax.reload();
                 $("#mnt_modal").modal('hide');
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "Trámites Palmira",
                     html: "Se registro con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",
                 });
             }else if(datos == 0){
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "Trámites Palmira",
                     html: "Registro ya existe, por favor validar.",
                     icon: "error",
                     confirmButtonColor: "#5156be",
@@ -41,7 +41,7 @@ function guardaryeditar(e){
                 $("#listado_table").DataTable().ajax.reload();
                 $("#mnt_modal").modal('hide');
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "Trámites Palmira",
                     html: "Se actualizo con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",
@@ -137,7 +137,7 @@ function eliminar(area_id){
             $.post("../../controller/area.php?op=eliminar",{area_id:area_id},function(data){
                 $("#listado_table").DataTable().ajax.reload();
                 Swal.fire({
-                    title: "Mesa de Partes",
+                    title: "Trámites Palmira",
                     html: "Se elimino con exito.",
                     icon: "success",
                     confirmButtonColor: "#5156be",
