@@ -8,7 +8,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>AnderCode | Inicio Mesa de Partes</title>
+        <title>Inicio Trámites Palmira</title>
         <?php require_once("../html/head.php")?>
     </head>
 

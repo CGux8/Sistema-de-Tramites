@@ -1,9 +1,9 @@
 <?php
     require_once("../../config/conexion.php");
     require_once("../../models/Rol.php");
-   /*  $rol = new Rol();
+    $rol = new Rol();
     $datos = $rol->validar_menu_x_rol($_SESSION["rol_id"],"mntrol");
-    if(isset($_SESSION["usu_id"]) and count($datos)>0){ */
+    if(isset($_SESSION["usu_id"]) and count($datos)>0){
 ?>
 <!doctype html>
 <html lang="es">
@@ -92,7 +92,7 @@
     </body>
 </html>
 <?php
-/*   }else{
+ }else{
     header("Location:".Conectar::ruta()."index.php");
-  } */
+  }
 ?>

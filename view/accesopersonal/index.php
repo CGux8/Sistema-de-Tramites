@@ -220,21 +220,21 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
               <h6 class="font-size-14 mb-3 text-muted fw-medium">- Acceder con -</h6>
             </div> -->
 
-            <ul class="list-inline mb-0">
+            <!-- <ul class="list-inline mb-0">
 
               <li class="list-inline-item">
-
+ -->
                 <!--TODO: Botón "Iniciar sesión con Google" con atributos de datos HTML para la API -->
-                <div id="g_id_onload"
+               <!--  <div id="g_id_onload"
                   data-client_id="554564814134-l9ps3t4up0n0p8u4ed99s4dtamp8celb.apps.googleusercontent.com"
                   data-context="signin"
                   data-ux_mode="popup"
                   data-callback="handleCredentialResponse"
                   data-auto_prompt="false">
-                </div>
+                </div> -->
 
                 <!--TODO: Configuración del botón de inicio de sesión con Google -->
-                <div class="g_id_signin"
+               <!--  <div class="g_id_signin"
                   data-type="standard"
                   data-shape="rectangular"
                   data-theme="outline"
@@ -242,8 +242,11 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
                   data-size="large"
                   data-logo_alignment="left"></div>
               </li>
-
-            </ul>
+ -->
+           <!--  </ul> -->
+              <p class="mt-3">Acceso Ciudadano &nbsp;
+          <a class="mt-3" href="../../index.php">Acceder</a>
+        </p>
           </div>
 
           </p>
