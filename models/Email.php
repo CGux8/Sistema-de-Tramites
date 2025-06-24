@@ -101,6 +101,51 @@ public function recuperar($usu_correo){
     }
 }
 
+ public function nuevo_colaborador($usu_id){
+
+        $conexion = new Conectar();
+
+        $usuario = new Usuario();
+        $datos = $usuario -> get_usuario_id($usu_id);
+
+        $this->IsSMTP();
+        $this->Host = 'smtp.gmail.com';
+        $this->Port = 587;
+        $this->SMTPAuth = true;
+        $this->SMTPSecure = 'tls';
+
+        $this->Username = $this->gCorreo;
+        $this->Password = $this->gContrasena;
+        $this->setFrom($this->gCorreo,"Bienvenido Colaborador Trámites Palmira");
+
+        $this->CharSet = 'UTF8';
+        $this->addAddress($datos[0]["usu_correo"]);
+        $this->IsHTML(true);
+        $this->Subject = "Trámites Palmira";
+
+        $url = $conexion->ruta()."view/accesopersonal/";
+
+        //TODO: Generar la cadena alfanumérica
+        $xpassusu = $this->generarXPassUsu();
+
+        $usuario -> recuperar_usuario($datos[0]["usu_correo"],$xpassusu);
+
+        $cuerpo = file_get_contents("../assets/email/nuevocolaborador.html");
+        $cuerpo = str_replace("xemail",$datos[0]["usu_correo"],$cuerpo);
+        $cuerpo = str_replace("xpassusu",$xpassusu,$cuerpo);
+        $cuerpo = str_replace("xlinksistema",$url,$cuerpo);
+
+        $this->Body = $cuerpo;
+        $this->AltBody = strip_tags("Recupera Contraseña");
+
+        try{
+            $this->send();
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+    }
+
 private function generarXPassUsu() {
     $parteAlfanumerica = substr(md5(rand()), 0, 3);
     $parteNumerica = str_pad(rand(0, 999), 3, '0', STR_PAD_LEFT);

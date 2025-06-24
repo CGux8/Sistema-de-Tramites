@@ -1,3 +1,10 @@
+<?php
+require_once("../../models/Rol.php");
+$rol = new Rol();
+
+$datos = $rol->get_menu_x_rol($_SESSION["rol_id"]);
+?>
+
 <div class="vertical-menu">
   <div data-simplebar="" class="h-100">
 
@@ -7,75 +14,17 @@
         <li class="menu-title" data-key="t-menu">Menu</li>
 
         <?php
-        if ($_SESSION["rol_id"] == 1) {
+        foreach ($datos as $row) {
         ?>
           <li>
-            <a href="../../index.php">
-              <i data-feather="home"></i>
-              <span data-key="t-dashboard">Inicio</span>
+            <a href="<?php echo $row["men_ruta"] ?>">
+              <i data-feather="<?php echo $row["men_icon"] ?>"></i>
+              <span data-key="t-dashboard"><?php echo $row["men_nom_vista"] ?></span>
             </a>
           </li>
-
-          <li>
-            <a href="../NuevoTramite/inhumacion.php">
-              <i data-feather="grid"></i>
-              <span data-key="t-apps">Gestionar Trámites</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="../ConsultarTramite/">
-              <i data-feather="users"></i>
-              <span data-key="t-authentication">Consultar Trámites</span>
-            </a>
-          </li>
-
-        <?php
-        } elseif ($_SESSION["rol_id"] == 2) {
-        ?>
-          <li>
-            <a href="../homecolaborador/">
-              <i data-feather="home"></i>
-              <span data-key="t-dashboard">Inicio Colaborador</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="../gestionartramite/">
-              <i data-feather="grid"></i>
-              <span data-key="t-apps">Gestionar Trámites</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="../buscartramite/">
-              <i data-feather="users"></i>
-              <span data-key="t-authentication">Buscar Trámites</span>
-            </a>
-          </li>
-
-        <?php
-        } elseif ($_SESSION["rol_id"] == 3) {
-        ?>
-          
-          <li>
-            <a href="../mntusuario/">
-              <i data-feather="users"></i>
-              <span data-key="t-apps">Mantenimiento Colaborador</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="../mntarea/">
-              <i data-feather="grid"></i>
-              <span data-key="t-authentication">Mantenimiento Area</span>
-            </a>
-          </li>
-
         <?php
         }
         ?>
-
 
       </ul>
     </div>

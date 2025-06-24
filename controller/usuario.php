@@ -141,7 +141,7 @@ switch ($_GET["op"]) {
             $datos = $usuario->get_usuario_correo($_POST["usu_correo"]);
             if (is_array($datos) == true and count($datos) == 0) {
                 $datos1 = $usuario->insert_colaborador($_POST["usu_nomape"], $_POST["usu_correo"], $_POST["rol_id"]);
-                /* $email->nuevo_colaborador($datos1[0]["usu_id"]); */
+                $email->nuevo_colaborador($datos1[0]["usu_id"]); 
                 echo "1";
             } else {
                 echo "0";
