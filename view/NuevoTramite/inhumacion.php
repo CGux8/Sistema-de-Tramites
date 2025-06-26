@@ -28,7 +28,7 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
               <div class="col-12">
                 <div
                   class="page-title-box d-sm-flex align-items-center justify-content-between">
-                  <h1 class="mb-sm-0 font-size-18">Gestionar Tramite</h1>
+                  <h1 class="mb-sm-0 font-size-18">Registrar Trámite</h1>
 
                   <!-- <div class="page-title-right">
                     <ol class="breadcrumb m-0">
@@ -227,7 +227,7 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
                             </div>
                           </div>
                         </div>
-                     <!--    <div class="col-lg-4">
+                        <!--    <div class="col-lg-4">
                           <div class="mb-3">
                             <label for="example-text-input" class="form-label">Otro:</label>
                             <input class="form-control" type="text" value="" name="inhum_cem_crem7" id="inhum_cem_crem7">
@@ -282,7 +282,7 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
                               <button class="dz-button" type="button">
                                 <img src="../../assets/img/upload.png" alt="">
                               </button>
-                              <div class="dz-message" data-dz-message><span>Arrastra y suelta tu archivo aquí o haz click para seleccionar tu archivo <br> Maximo 1 archivo de tipo *.PDF, y solo de peso maximo de 10MB </span></div>
+                              <div class="dz-message" data-dz-message><span>Arrastra y suelta tu archivo aquí o haz click para seleccionar tu archivo <br> Maximo 1 archivo de tipo *.PDF, y solo de peso maximo de 10MB <br> Nombres de los archivos sin caracteres especiales</span></div>
                             </div>
                           </div>
                         </div>

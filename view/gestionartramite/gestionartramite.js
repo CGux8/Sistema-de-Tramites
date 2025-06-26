@@ -8,7 +8,7 @@ Dropzone.autoDiscover = false;
 let myDropzone = new Dropzone(".dropzone", {
  url:'../../assets/document/', 
   /* url: "../../controller/inhumacion.php?op=temporary_upload", */
-  maxFilesize: 5,
+  maxFilesize: 10,
   maxFiles: 5,
   acceptedFiles: "application/pdf",
   addRemoveLinks: true,
@@ -32,10 +32,10 @@ myDropzone.on("maxfilesexceeded", function (file) {
 });
 
 myDropzone.on("addedfile", function (file) {
-  if (file.size > 2 * 1024 * 1024) {
+  if (file.size > 10 * 1024 * 1024) {
     Swal.fire({
       title: "Trámites Palmira",
-      text: 'El archivo "' + file.name + '" excede el tamaño maximo de 5 MB.',
+      text: 'El archivo "' + file.name + '" excede el tamaño maximo de 10 MB.',
       icon: "error",
       confirmButtonColor: "#5156be",
     });

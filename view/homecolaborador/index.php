@@ -30,19 +30,12 @@
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                     <h4 class="mb-sm-0 font-size-18">Inicio Colaborador</h4>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                            <li class="breadcrumb-item active">Starter Page</li>
-                                        </ol>
-                                    </div>
-
                                 </div>
                             </div>
 
                             <div class="card border border-primary">
                                 <div class="card-header bg-transparent border-primary">
-                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Intrucciones para el registro de la Mesa de Partes</h5>
+                                    <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Intrucciones PLataforma de Trámites Palmira</h5>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Leer Atentamente : </h5>
