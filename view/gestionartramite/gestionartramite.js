@@ -6,8 +6,8 @@ let arrDocument = [];
 Dropzone.autoDiscover = false;
 
 let myDropzone = new Dropzone(".dropzone", {
-  /* url:'../../assets/document', */
-  url: "../../controller/inhumacion.php?op=temporary_upload",
+ url:'../../assets/document/', 
+  /* url: "../../controller/inhumacion.php?op=temporary_upload", */
   maxFilesize: 5,
   maxFiles: 5,
   acceptedFiles: "application/pdf",

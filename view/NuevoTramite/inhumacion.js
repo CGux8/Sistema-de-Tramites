@@ -3,7 +3,7 @@ let arrDocument = [];
 Dropzone.autoDiscover = false;
 
 let myDropzone = new Dropzone("#dropzone", {
-  url: "../../assets/document/arch_inhumacion",
+  url: "../../assets/document/",
   maxFilesize: 10,
   maxFiles: 1,
   acceptedFiles: "application/pdf",

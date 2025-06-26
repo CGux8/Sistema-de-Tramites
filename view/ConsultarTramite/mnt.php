@@ -143,7 +143,7 @@
             </table>
           </div>
 
-          <div class="col-lg-12">
+         <div class="col-lg-12">
             <br>
             <div class="mb-3">
               <label for="form-label" class="form-label">Respuesta</label>

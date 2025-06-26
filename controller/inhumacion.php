@@ -46,7 +46,7 @@ switch ($_GET["op"]) {
             if (empty($_FILES['file']['name'])) {
             } else {
                 $countfiles = count($_FILES['file']['name']);
-                $ruta = "../assets/document/arch_inhumacion/" . $datos[0]["inhum_id"] . "/";
+                $ruta = "../assets/document/" . $datos[0]["inhum_id"] . "/";
                 $file_arr = array();
                 if (!file_exists($ruta)) {
                     mkdir($ruta, 0777, true);
@@ -173,7 +173,7 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["fech_crea"];
             $sub_array[] = $row["usu_nomape"];
             $sub_array[] = $row["doc_nom"];
-            $sub_array[] = '<button type="button" class="btn btn-soft-primary waves-effect waves-light btn-sm" onClick="documento(' . $row["inhum_id"] . ')"><i class="bx bx-search-alt font-size-16 align-middle"></i></button>';
+            $sub_array[] = '<a class="btn btn-soft-primary waves-effect waves-light btn-sm" href="../../assets/document/' . $row["inhum_id"] . '/' . $row["doc_nom"] . '" target="_blank" download><i class="bx bx-search-alt font-size-16 align-middle"></i></a>';
             $data[] = $sub_array;
         }
 
@@ -247,5 +247,4 @@ switch ($_GET["op"]) {
 
         echo json_encode($results);
         break;
-
 }

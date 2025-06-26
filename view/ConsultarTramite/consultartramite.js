@@ -1,4 +1,5 @@
 var tabla;
+var tabla_detalle;
 
 $(document).ready(function(){ 
 

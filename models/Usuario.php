@@ -39,7 +39,7 @@ class Usuario extends Conectar
                             $_SESSION["usu_correo"] = $resultado["usu_correo"];
                             $_SESSION["usu_img"] = $resultado["usu_img"];
                             $_SESSION["rol_id"] = $resultado["rol_id"];
-                            header("Location:" . conectar::ruta() . "view/Home/");
+                            header("Location:" . conectar::ruta() . "view/NuevoTramite/inhumacion.php");
                             exit();
                         }
                     } else {
