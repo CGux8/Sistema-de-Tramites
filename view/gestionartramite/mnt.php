@@ -8,66 +8,136 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <input type="hidden" id="doc_id" name="doc_id">
+                        <input type="hidden" id="inhum_id" name="inhum_id">
 
                         <div class="col-lg-3">
+                          <div class="mb-3">
                             <div class="mb-3">
-                                <label for="form-label" class="form-label">Area</label>
-                                <input class="form-control form-control-sm" type="text" value="" name="area_nom" id="area_nom" readonly>
+                              <label for="example-text-input" class="form-label">Nombres</label>
+                              <input class="form-control" type="text" value="" name="inhum_nom" id="inhum_nom" readonly>
                             </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Primer Apellido</label>
+                            <input class="form-control" type="text" value="" name="inhum_papell" id="inhum_papell" readonly>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Segundo Apellido</label>
+                            <input class="form-control" type="text" value="" name="inhum_sapell" id="inhum_sapell" readonly>
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label class="form-label">Sexo</label>
+                              <input class="form-control" type="text" value="" name="inhum_sex" id="inhum_sex" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label class="form-label">Tipo de documento</label>
+                              <input class="form-control" type="text" value="" name="inhum_tip_doc" id="inhum_tip_doc" readonly>
+                            </div>
+                          </div>
                         </div>
 
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label for="example-number-input" class="form-label">Número de Documento</label>
+                              <input class="form-control" type="number" value="" name="inhum_num_doc" id="inhum_num_doc" readonly>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label for="example-text-input" class="form-label">Municipio de fallecimiento</label>
+                              <input class="form-control" type="text" value="" name="inhum_mun_fall" id="inhum_mun_fall" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label class="form-label">Manera de Muerte</label>
+                              <input class="form-control" type="text" value="" name="inhum_man_muert" id="inhum_man_muert" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label for="example-date-input" class="form-label">Fecha de Defunción</label>
+                              <input class="form-control" type="date" value="" name="inhum_fecha_defun" id="inhum_fecha_defun" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="mb-3">
+                            <div class="mb-3">
+                              <label for="example-number-input" class="form-label">Nro. Certificado de Defunción</label>
+                              <input class="form-control" type="number" value="" name="inhum_cert_defun" id="inhum_cert_defun" readonly>
+                            </div>
+                          </div>
+                        </div>
                         <div class="col-lg-6">
+                          <div class="mb-3">
                             <div class="mb-3">
-                                <label for="example-text-input" class="form-label">Tramite</label>
-                                <input class="form-control form-control-sm" type="text" value="" name="tra_nom" id="tra_nom" readonly>
+                              <label for="example-date-input" class="form-label">Fecha nacimiento (Para muerte FETAL, registrar la misma fecha de fallecimiento)</label>
+                              <input class="form-control" type="date" value="" name="inhum_fech_nac" id="inhum_fech_nac" readonly>
                             </div>
+                          </div>
                         </div>
 
-                        <div class="col-lg-3">
-                            <div class="mb-3">
-                                <label for="form-label" class="form-label">Nro Externo</label>
-                                <input class="form-control form-control-sm" type="text" value="" name="doc_externo" id="doc_externo" readonly>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="mb-3">
-                                <label for="form-label" class="form-label">Tipo</label>
-                                <input class="form-control form-control-sm" type="text" value="" name="tip_nom" id="tip_nom" readonly>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="mb-3">
-                                <label for="form-label" class="form-label">DNI / RUC</label>
-                                <input class="form-control form-control-sm" type="text" value="" name="doc_dni" id="doc_dni" readonly>
-                            </div>
-                        </div>
-
+                        <h5>Destino Final</h5>
                         <div class="col-lg-6">
+                          <div class="mb-3">
                             <div class="mb-3">
-                                <label for="form-label" class="form-label">Nombre / Razon Social</label>
-                                <input class="form-control form-control-sm" type="text" value="" name="doc_nom" id="doc_nom" readonly>
+                              <label class="form-label">Nombre del Cementerio o Crematorio</label>
+                              <input class="form-control" type="text" value="" name="inhum_cem_crem" id="inhum_cem_crem" readonly>
                             </div>
+                          </div>
                         </div>
+                        <!-- <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Otro:</label>
+                            <input class="form-control" type="text" value="" name="inhum_cem_crem7" id="inhum_cem_crem7">
+                          </div>
+                        </div> -->
 
-                        <div class="col-lg-12">
+                        <h5>Datos Funeraria</h5>
+                        <div class="col-lg-6">
+                          <div class="mb-3">
                             <div class="mb-3">
-                                <label for="form-label" class="form-label">Descripción</label>
-                                <textarea class="form-control form-control-sm" type="text" rows="2" value="" name="doc_descrip" id="doc_descrip" readonly></textarea>
+                              <label class="form-label">Nombre de la Funeraria</label>
+                              <input class="form-control" type="text" value="" name="inhum_nom_fun" id="inhum_nom_fun" readonly>
                             </div>
+                          </div>
                         </div>
-
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label for="example-text-input" class="form-label">Nombres y Apellidos de quien realiza el trámite</label>
+                            <input class="form-control" type="text" value="" name="inhum_nom_real_tram" id="inhum_nom_real_tram" readonly>
+                          </div>
+                        </div>
+                        
                         <div class="col-lg-12">
                             <label for="form-label" class="form-label">Documentos Adjuntos</label>
                             <table id="listado_table_detalle" class="table table-bordered dt-responsive table-sm nowrap w-100">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Fech.Creación</th>
+                                        <!-- <th>Nro. Radicado</th> -->
+                                        <th>Fecha Creación</th>
                                         <th>Usuario</th>
-                                        <th>Perfil</th>
+                                        <th>Nombre Documento</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -79,10 +149,10 @@
                         </div>
 
                         <div class="col-lg-12">
-                            <br/>
+                            <br>
                             <div class="mb-3">
-                                <label for="form-label" class="form-label">Respuesta (*)</label>
-                                <textarea class="form-control form-control-sm" placeholder="Ingrese respuesta del tramite" type="text" rows="2" value="" name="doc_respuesta" id="doc_respuesta" required></textarea>
+                                <label for="form-label" class="form-label">Respuesta</label>
+                                <textarea class="form-control form-control-sm" placeholder="Ingrese respuesta del tramite" type="text" rows="2" value="" name="doc_respuesta" id="doc_respuesta"></textarea>
                             </div>
                         </div>
 

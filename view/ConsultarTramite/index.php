@@ -50,7 +50,7 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
                             <th>Area</th>
                             <th>Trámite</th>
                             <th>Nombre</th>
-                            <!-- <th>Estado</th> -->
+                            <th>Estado</th>
                             <th></th>
                           </tr>
                         </thead>
@@ -74,6 +74,8 @@ if (isset($_SESSION["usu_id"]) and count($datos) > 0) {
 
       </div>
     </div>
+
+    <?php require_once("mnt.php"); ?>
 
     <?php require_once("../html/sidebar.php"); ?>
 
