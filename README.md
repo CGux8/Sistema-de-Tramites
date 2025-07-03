@@ -1,1 +1,1 @@
-# Sistema de Tramites . Alcaldia de Palmira
+# Sistema de Tramites
